@@ -5,6 +5,37 @@ const nodemailer = require('nodemailer');
 const Docente = require('../../models/Docente')
 const Solicitacao = require('../../models/Solicitacao')
 
+router.solicitacoes = (req, res, next)  => {
+    if (req.isAuthenticated()) {
+        Solicitacao.find({ aluno: req.user._id }).then(solicitacoes => {
+            if (solicitacoes) {
+
+                solic_data = [];
+
+                if (solicitacoes.length == 0) {
+                    res.locals.solicitacoes = solic_data;
+                } 
+
+                solicitacoes.forEach(solicitacao => {
+                    Docente.findOne({ id_lattes: solicitacao.id_lattes }).then(docente => {
+                        if (!docente) { return; }
+
+                        solic_data.push(
+                            {
+                                solicitacao: solicitacao,
+                                docente: docente
+                            }
+                        );
+
+                        res.locals.solicitacoes = solic_data;
+                    });
+                });
+            };
+        })
+    }
+    next();
+}
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: require('../../config/nodemailer_auth').auth,
