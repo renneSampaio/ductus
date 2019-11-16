@@ -106,7 +106,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/solicitacoes', (req, res) => {
-    Solicitacao.find({ aluno: res.user._id }).then(solicitacoes => {
+    Solicitacao.find({ aluno: req.user._id }).then(solicitacoes => {
         if (solicitacoes) {
 
             solic_data = [];
