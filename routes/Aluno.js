@@ -5,6 +5,7 @@ const passport = require('passport');
 const {ensureAuthenticated} = require('../config/auth');
 
 const Aluno = require('../models/Aluno')
+const Curso = require('../models/Curso')
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render('/', {
@@ -21,7 +22,13 @@ router.get('/login', (req, res) => {
 });
 
 //Register page
-router.get('/register', (req, res) => { res.render('register') } );
+router.get('/register', (req, res) => { 
+    Curso.find({}).then( cursos => {
+        if (cursos) {
+            res.render('register', { user: req.user, cursos: cursos });
+        }
+    });
+});
 
 // Register handle
 router.post('/register', (req, res) => {

@@ -12,8 +12,9 @@
     <label for="curso">Curso</label>
     <input list="cursos" id="curso" name="curso" />
     <datalist id="cursos">
-      <option value="Sistemas e Mídias Digitais (Diurno)">
-      <option value="Sistemas e Mídias Digitais (Noturno)">
+      <% cursos.forEach( curso => { %>
+          <option value="<%= curso.name %>">
+      <% }); %>
     </datalist>
 
     <label for="password">Senha</label>

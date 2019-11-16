@@ -6,10 +6,17 @@ const fast_xml_parser = require('fast-xml-parser');
 
 const Docente = require('../../models/Docente')
 const Curriculo = require('../../models/Curriculo')
+const Curso = require('../../models/Curso')
 
-router.get('/gerarProfessores', (req, res) => {
+router.get('/atualizarDados', (req, res) => {
     const docentes = fs.readFileSync('config/dados_docentes', 'utf-8').split('\r\n');
+    const cursos = fs.readFileSync('config/cursos', 'utf-8').split('\r\n');
     // console.log(docentes);
+
+    cursos.forEach( name => {
+        const curso = new Curso({name})
+        curso.save().then(curso => {});
+    });
 
     docentes.reverse().pop();
     docentes.forEach(docente_string => {
