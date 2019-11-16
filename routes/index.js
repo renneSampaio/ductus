@@ -7,13 +7,14 @@ const fast_xml_parser = require('fast-xml-parser');
 const Docente = require('../models/Docente')
 const Curriculo = require('../models/Curriculo')
 
-router.get('/', (req, res) => {res.render('index', { user: req.user})});
+router.get('/', (req, res) => {
+    res.render('index', { user: req.user});
+});
 
 router.get('/index_smd', (req, res) => {
 
     Docente.find({})
         .then(docentes => {
-            
             res.render('index_smd', {
                 docentes: docentes,
                 user: req.user
