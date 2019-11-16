@@ -1,0 +1,85 @@
+<div class="page-wrapper">
+  <header class="page-header" role="banner">
+    <div id="pageNav">
+      <div class="page-nav" id="navOne">
+        <nav role="navigation">
+
+          <div id="profile-header">
+            <% if (user != undefined) {%>
+            <img src="/images/profile-photo.jpg">
+            <div>
+              <h4>Olá, <%= user.name %></h4>
+              <button type="button" class="btn bg-white inverse fal fa-angle-right"
+                onclick="location.href='/aluno/dashboard';">Ver Perfil</button>
+            </div>
+            <% } else {%>
+            <div>
+              <button type="button" class="btn bg-white inverse fal fa-angle-right"
+                onclick="location.href='/aluno/login';">Login</button>
+            </div>
+            <% } %>
+          </div>
+
+          <ul class="nav-primary">
+            <li>
+              <a href="index.html">
+                <img src="/images/icons/home.png" class="icones">
+                Início
+              </a>
+            </li>
+            <li>
+              <a href="/index_smd">
+                <img src="/images/icons/home.png" class="icones">
+                Meu Curso
+              </a>
+            </li>
+            <li>
+              <a href="/aluno/solicitacoes">
+                <img src="/images/icons/home.png" class="icones">
+                Solicitações
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img src="/images/icons/cursos.png" class="icones">
+                Cursos
+              </a>
+            </li>
+            <li>
+              <a href="ajuda">
+                <img src="/images/icons/ajuda.png" class="icones">
+                Ajuda
+              </a>
+            </li>
+            <li>
+              <a>
+                <img src="/images/icons/ajuda.png" class="icones">
+                Configurações
+              </a>
+            </li>
+          </ul>
+            <ul class="nav-primary" id="last-itens">
+            <li>            
+              <a href="aluno/logout">
+                <span class="dot"></span> 
+                Logout
+              </a>
+            </li> 
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="page-header-mobile">
+  <img class="logo" src="/images/logo-ductu.png" alt=" " />
+
+  <button class="trigger-nav-container" data-trigger-nav="navOne">
+    <img src="/images/icons/burger-icon.png" id="icone-menu">
+  </button>
+
+  <button id="icone-pesquisa"> <img src="/images/icons/pesquisa.png" style="" alt=""></button>
+
+  <button id="icone-notificacao" onclick="location.href='notificacoes.html';"> <img
+      src="/images/icons/notificacao.png"></button>
+</div>
