@@ -53,7 +53,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 // Routes
-app.use('/api', require('./routes/api/solicitacao').solicitacoes);
+app.use(require('./routes/api/solicitacao').notificacoes);
 
 app.use('/', require('./routes/index'));
 app.use('/aluno', require('./routes/Aluno'));

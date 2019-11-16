@@ -5,21 +5,29 @@ const nodemailer = require('nodemailer');
 const Docente = require('../../models/Docente')
 const Solicitacao = require('../../models/Solicitacao')
 
-router.solicitacoes = (req, res, next)  => {
+router.notificacoes = (req, res, next) => {
     if (req.isAuthenticated()) {
-        Solicitacao.find({ aluno: req.user._id }).then(solicitacoes => {
+        let solic_data = [];
+        res.locals.solicitacoes = solic_data;
+        Solicitacao.find({ aluno: req.user._id, respondido: true }).then(solicitacoes => {
             if (solicitacoes) {
 
-                solic_data = [];
+                var solic_data = [];
 
                 if (solicitacoes.length == 0) {
                     res.locals.solicitacoes = solic_data;
-                } 
+                }
 
                 solicitacoes.forEach(solicitacao => {
+                    if (solicitacao.lido == true) {
+                        return;
+                    }
+
+                    
                     Docente.findOne({ id_lattes: solicitacao.id_lattes }).then(docente => {
                         if (!docente) { return; }
-
+                        
+                        console.log("teste");
                         solic_data.push(
                             {
                                 solicitacao: solicitacao,
@@ -30,7 +38,10 @@ router.solicitacoes = (req, res, next)  => {
                         res.locals.solicitacoes = solic_data;
                     });
                 });
-            };
+            } else {
+                let solic_data = [];
+                res.locals.solicitacoes = solic_data;
+            }
         })
     }
     next();
@@ -43,7 +54,8 @@ let transporter = nodemailer.createTransport({
 
 router.post('/solicitacao/:id_lattes', (req, res) => {
 
-    const { aluno } = req.body.aluno_id;
+    const aluno = req.user._id;
+    const id_lattes = req.params.id_lattes;
 
     Solicitacao
         .findOne(
@@ -67,16 +79,16 @@ router.post('/solicitacao/:id_lattes', (req, res) => {
                 const email_mockup = `
                 <ul>
                     <li>
-                        <a href='http://localhost:5000/solicitacao/aceitar/${solic._id}'>Aceitar</a>
+                        <a href='http://localhost:5000/api/solicitacao/aceitar/${solic._id}'>Aceitar</a>
                     </li>
                     <li>
-                        <a href='http://localhost:5000/solicitacao/recusar/${solic._id}'>Recusar</a>
+                        <a href='http://localhost:5000/api/solicitacao/recusar/${solic._id}'>Recusar</a>
                     </li>
                 </ul>`;
 
                 transporter.sendMail({
                     from: 'rennesampaio97@gmail.com',
-                    to: req.body.email,
+                    to: 'rennesampaio97@gmail.com',
                     subject: "teste",
                     html: email_mockup
                 }, (err, data) => {
@@ -93,7 +105,7 @@ router.post('/solicitacao/:id_lattes', (req, res) => {
 });
 
 router.get('/solicitacao/aceitar/:id', (req, res) => {
-    Solicitacao.findByIdAndUpdate(id, {respondido: true, aceito: true}).then(
+    Solicitacao.findByIdAndUpdate(req.params.id, { respondido: true, aceito: true }).then(
         solic => {
             if (!solic) {
                 res.send("Solicitação não encontrada");
@@ -106,7 +118,7 @@ router.get('/solicitacao/aceitar/:id', (req, res) => {
 });
 
 router.get('/solicitacao/recusar/:id', (req, res) => {
-    Solicitacao.findByIdAndUpdate(id, {respondido: true, aceito: false}).then(
+    Solicitacao.findByIdAndUpdate(id, { respondido: true, aceito: false }).then(
         solic => {
             if (!solic) {
                 res.send("Solicitação não encontrada");

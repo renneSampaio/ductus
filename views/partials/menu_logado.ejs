@@ -28,7 +28,7 @@
               </a>
             </li>
             <li>
-              <a href="/index_smd">
+              <a href="index_smd">
                 <img src="/images/icons/home.png" class="icones">
                 Meu Curso
               </a>
@@ -80,6 +80,11 @@
 
   <button id="icone-pesquisa"> <img src="/images/icons/pesquisa.png" style="" alt=""></button>
 
+  <% if (locals.solicitacoes.length == 0) { %>
   <button id="icone-notificacao" onclick="location.href='notificacoes.html';"> <img
       src="/images/icons/notificacao.png"></button>
+      <p>
+        10
+      </p>
+  <% } %>
 </div>
