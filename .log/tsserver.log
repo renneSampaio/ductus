@@ -1,0 +1,834 @@
+Info 0    [20:42:12.367] Starting TS Server
+Info 1    [20:42:12.368] Version: 3.7.2
+Info 2    [20:42:12.368] Arguments: /home/renne/.nvm/versions/node/v13.0.1/bin/node /home/renne/.nvm/versions/node/v13.0.1/bin/tsserver --logFile /home/renne/Documents/ufc/s8/proj2/alpha/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/f94f3053481eaee12abe94657eba0290/tscancellation*
+Info 3    [20:42:12.368] Platform: linux NodeVersion: 13 CaseSensitive: true
+Info 4    [20:42:12.384] Search path: /home/renne/Documents/ufc/s8/proj2/alpha
+Info 5    [20:42:12.385] For info: /home/renne/Documents/ufc/s8/proj2/alpha/app.js :: No config files found.
+Info 6    [20:42:12.391] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [20:42:16.309] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 3918ms
+Info 8    [20:42:16.309] Project '/dev/null/inferredProject1*' (Inferred) 
+Info 9    [20:42:16.309] 	Files (119)
+
+Info 10   [20:42:16.309] -----------------------------------------------
+Info 11   [20:42:17.279] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 12   [20:42:17.353] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true Elapsed: 74ms
+Info 13   [20:42:17.353] Project '/dev/null/inferredProject1*' (Inferred) 
+Info 14   [20:42:17.353] 	Files (123)
+
+Info 15   [20:42:17.353] -----------------------------------------------
+Info 16   [20:42:17.355] Structure before ensureProjectForOpenFiles:
+Info 17   [20:42:17.355] Structure after ensureProjectForOpenFiles:
+Info 18   [20:42:17.355] got projects updated in background, updating diagnostics for /home/renne/Documents/ufc/s8/proj2/alpha/app.js
+Info 19   [20:42:17.883] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 20   [20:42:17.901] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false Elapsed: 18ms
+Info 21   [20:42:17.901] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 22   [20:42:17.901] Structure before ensureProjectForOpenFiles:
+Info 23   [20:42:17.901] Structure after ensureProjectForOpenFiles:
+Info 24   [20:42:17.901] got projects updated in background, updating diagnostics for /home/renne/Documents/ufc/s8/proj2/alpha/app.js
+Err 25    [20:42:30.311] Exception on executing command {"command":"signatureHelp","seq":12,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":45,"offset":9}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 26    [20:42:32.21] Exception on executing command {"command":"signatureHelp","seq":17,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":45,"offset":9}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 27    [20:44:2.885] Exception on executing command {"command":"signatureHelp","seq":291,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":26,"offset":15}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 28    [20:44:8.194] Exception on executing command {"command":"signatureHelp","seq":308,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":26,"offset":25}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 29   [20:45:1.128] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 30   [20:45:1.196] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: true Elapsed: 67ms
+Info 31   [20:45:1.197] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Err 32    [20:45:51.906] Exception on executing command {"command":"signatureHelp","seq":1081,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":38,"offset":9}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 33    [20:45:53.706] Exception on executing command {"command":"signatureHelp","seq":1096,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":41,"offset":9}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 34    [20:45:54.715] Exception on executing command {"command":"signatureHelp","seq":1110,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":38,"offset":9}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 35   [20:45:57.372] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 36   [20:45:57.395] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 5 structureChanged: false Elapsed: 23ms
+Info 37   [20:45:57.396] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 38   [20:45:57.711] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 39   [20:45:57.733] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 6 structureChanged: false Elapsed: 21ms
+Info 40   [20:45:57.733] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 41   [20:45:57.952] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 42   [20:45:57.968] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 7 structureChanged: false Elapsed: 16ms
+Info 43   [20:45:57.969] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 44   [20:45:58.51] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 45   [20:45:58.88] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 8 structureChanged: false Elapsed: 37ms
+Info 46   [20:45:58.88] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 47   [20:45:58.265] getCompletionData: Get current token: 0
+Info 48   [20:45:58.265] getCompletionData: Is inside comment: 0
+Info 49   [20:45:58.265] getCompletionData: Get previous token 1: 0
+Info 50   [20:45:58.265] getCompletionData: Get previous token 2: 0
+Info 51   [20:45:58.265] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 52   [20:45:58.277] getCompletionData: Semantic work: 11
+Info 53   [20:45:58.305] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 27
+Info 54   [20:45:58.352] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 55   [20:45:58.382] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 9 structureChanged: false Elapsed: 30ms
+Info 56   [20:45:58.382] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 57   [20:45:58.560] getCompletionData: Get current token: 0
+Info 58   [20:45:58.560] getCompletionData: Is inside comment: 0
+Info 59   [20:45:58.560] getCompletionData: Get previous token 1: 0
+Info 60   [20:45:58.560] getCompletionData: Get previous token 2: 0
+Info 61   [20:45:58.560] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 62   [20:45:58.569] getCompletionData: Semantic work: 9
+Info 63   [20:45:58.589] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 19
+Info 64   [20:46:0.48] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 65   [20:46:0.65] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 10 structureChanged: false Elapsed: 17ms
+Info 66   [20:46:0.65] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 67   [20:46:0.69] getCompletionData: Get current token: 0
+Info 68   [20:46:0.69] getCompletionData: Is inside comment: 0
+Info 69   [20:46:0.69] getCompletionData: Get previous token 1: 0
+Info 70   [20:46:0.69] getCompletionData: Get previous token 2: 0
+Info 71   [20:46:0.69] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 72   [20:46:0.77] getCompletionData: Semantic work: 8
+Info 73   [20:46:0.96] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 19
+Info 74   [20:46:0.151] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 75   [20:46:0.186] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 11 structureChanged: false Elapsed: 35ms
+Info 76   [20:46:0.186] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 77   [20:46:0.400] getCompletionData: Get current token: 0
+Info 78   [20:46:0.401] getCompletionData: Is inside comment: 1
+Info 79   [20:46:0.401] getCompletionData: Get previous token 1: 0
+Info 80   [20:46:0.401] getCompletionData: Get previous token 2: 0
+Info 81   [20:46:0.401] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 82   [20:46:0.409] getCompletionData: Semantic work: 8
+Info 83   [20:46:0.425] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 16
+Info 84   [20:46:0.743] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 85   [20:46:0.770] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 12 structureChanged: false Elapsed: 27ms
+Info 86   [20:46:0.770] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 87   [20:46:0.773] getCompletionData: Get current token: 0
+Info 88   [20:46:0.773] getCompletionData: Is inside comment: 0
+Info 89   [20:46:0.773] getCompletionData: Get previous token 1: 0
+Info 90   [20:46:0.773] getCompletionData: Get previous token 2: 0
+Info 91   [20:46:0.773] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 92   [20:46:0.784] getCompletionData: Semantic work: 11
+Info 93   [20:46:0.812] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 28
+Info 94   [20:46:0.849] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 95   [20:46:0.864] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 13 structureChanged: false Elapsed: 14ms
+Info 96   [20:46:0.864] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 97   [20:46:1.142] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 98   [20:46:1.156] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 14 structureChanged: false Elapsed: 14ms
+Info 99   [20:46:1.156] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 100  [20:46:1.353] getCompletionData: Get current token: 0
+Info 101  [20:46:1.353] getCompletionData: Is inside comment: 0
+Info 102  [20:46:1.353] getCompletionData: Get previous token 1: 0
+Info 103  [20:46:1.353] getCompletionData: Get previous token 2: 0
+Info 104  [20:46:1.353] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 105  [20:46:1.358] getCompletionData: Semantic work: 5
+Info 106  [20:46:1.367] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 9
+Info 107  [20:46:1.649] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 108  [20:46:1.661] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 15 structureChanged: false Elapsed: 12ms
+Info 109  [20:46:1.661] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 110  [20:46:1.663] getCompletionData: Get current token: 0
+Info 111  [20:46:1.663] getCompletionData: Is inside comment: 0
+Info 112  [20:46:1.663] getCompletionData: Get previous token 1: 0
+Info 113  [20:46:1.663] getCompletionData: Get previous token 2: 0
+Info 114  [20:46:1.663] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 115  [20:46:1.671] getCompletionData: Semantic work: 8
+Info 116  [20:46:1.682] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 11
+Info 117  [20:46:2.170] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 118  [20:46:2.185] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 16 structureChanged: false Elapsed: 14ms
+Info 119  [20:46:2.185] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 120  [20:46:2.188] getCompletionData: Get current token: 0
+Info 121  [20:46:2.188] getCompletionData: Is inside comment: 0
+Info 122  [20:46:2.188] getCompletionData: Get previous token 1: 0
+Info 123  [20:46:2.188] getCompletionData: Get previous token 2: 0
+Info 124  [20:46:2.188] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 125  [20:46:2.192] getCompletionData: Semantic work: 4
+Info 126  [20:46:2.198] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 6
+Info 127  [20:46:2.862] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 128  [20:46:2.876] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 17 structureChanged: false Elapsed: 14ms
+Info 129  [20:46:2.877] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 130  [20:46:2.882] getCompletionData: Get current token: 0
+Info 131  [20:46:2.882] getCompletionData: Is inside comment: 0
+Info 132  [20:46:2.882] getCompletionData: Get previous token 1: 0
+Info 133  [20:46:2.882] getCompletionData: Get previous token 2: 0
+Info 134  [20:46:2.882] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 135  [20:46:2.890] getCompletionData: Semantic work: 8
+Info 136  [20:46:2.897] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 7
+Info 137  [20:46:3.948] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 138  [20:46:3.971] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 18 structureChanged: false Elapsed: 23ms
+Info 139  [20:46:3.971] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 140  [20:46:3.974] getCompletionData: Get current token: 0
+Info 141  [20:46:3.975] getCompletionData: Is inside comment: 1
+Info 142  [20:46:3.975] getCompletionData: Get previous token 1: 0
+Info 143  [20:46:3.975] getCompletionData: Get previous token 2: 0
+Info 144  [20:46:3.975] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 145  [20:46:3.982] getCompletionData: Semantic work: 7
+Info 146  [20:46:3.995] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 11
+Info 147  [20:46:4.69] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 148  [20:46:4.87] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 19 structureChanged: false Elapsed: 18ms
+Info 149  [20:46:4.87] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 150  [20:46:4.261] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 151  [20:46:4.280] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 20 structureChanged: false Elapsed: 19ms
+Info 152  [20:46:4.280] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 153  [20:46:4.470] getCompletionData: Get current token: 0
+Info 154  [20:46:4.470] getCompletionData: Is inside comment: 0
+Info 155  [20:46:4.470] getCompletionData: Get previous token 1: 0
+Info 156  [20:46:4.470] getCompletionData: Get previous token 2: 0
+Info 157  [20:46:4.470] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 158  [20:46:4.475] getCompletionData: Semantic work: 5
+Info 159  [20:46:4.479] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 160  [20:46:5.361] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 161  [20:46:5.376] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 21 structureChanged: false Elapsed: 15ms
+Info 162  [20:46:5.376] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 163  [20:46:5.377] getCompletionData: Get current token: 0
+Info 164  [20:46:5.377] getCompletionData: Is inside comment: 0
+Info 165  [20:46:5.377] getCompletionData: Get previous token 1: 0
+Info 166  [20:46:5.377] getCompletionData: Get previous token 2: 0
+Info 167  [20:46:5.377] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 168  [20:46:5.381] getCompletionData: Semantic work: 4
+Info 169  [20:46:6.90] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 170  [20:46:6.106] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 22 structureChanged: false Elapsed: 16ms
+Info 171  [20:46:6.106] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 172  [20:46:6.107] getCompletionData: Get current token: 0
+Info 173  [20:46:6.107] getCompletionData: Is inside comment: 0
+Info 174  [20:46:6.107] getCompletionData: Get previous token 1: 0
+Info 175  [20:46:6.107] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 176  [20:46:6.118] getCompletionData: Semantic work: 11
+Info 177  [20:46:6.119] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 178  [20:46:21.276] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 179  [20:46:21.290] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 23 structureChanged: false Elapsed: 14ms
+Info 180  [20:46:21.290] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 181  [20:46:21.292] getCompletionData: Get current token: 0
+Info 182  [20:46:21.292] getCompletionData: Is inside comment: 0
+Info 183  [20:46:21.292] getCompletionData: Get previous token 1: 0
+Info 184  [20:46:21.293] getCompletionData: Get previous token 2: 0
+Info 185  [20:46:21.293] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 186  [20:46:21.293] getCompletionData: Semantic work: 0
+Info 187  [20:46:21.294] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 188  [20:46:21.392] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 189  [20:46:21.406] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 24 structureChanged: false Elapsed: 14ms
+Info 190  [20:46:21.406] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 191  [20:46:21.408] getCompletionData: Get current token: 0
+Info 192  [20:46:21.408] getCompletionData: Is inside comment: 0
+Info 193  [20:46:21.408] getCompletionData: Get previous token 1: 0
+Info 194  [20:46:21.408] getCompletionData: Get previous token 2: 0
+Info 195  [20:46:21.408] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 196  [20:46:21.409] getCompletionData: Semantic work: 1
+Info 197  [20:46:21.409] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 198  [20:46:21.630] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 199  [20:46:21.641] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 25 structureChanged: false Elapsed: 11ms
+Info 200  [20:46:21.641] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 201  [20:46:21.643] getCompletionData: Get current token: 0
+Info 202  [20:46:21.643] getCompletionData: Is inside comment: 0
+Info 203  [20:46:21.643] getCompletionData: Get previous token 1: 0
+Info 204  [20:46:21.643] getCompletionData: Get previous token 2: 0
+Info 205  [20:46:21.643] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 206  [20:46:21.644] getCompletionData: Semantic work: 1
+Info 207  [20:46:21.644] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 208  [20:46:21.743] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 209  [20:46:21.761] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 26 structureChanged: false Elapsed: 18ms
+Info 210  [20:46:21.761] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 211  [20:46:21.764] getCompletionData: Get current token: 0
+Info 212  [20:46:21.764] getCompletionData: Is inside comment: 0
+Info 213  [20:46:21.764] getCompletionData: Get previous token 1: 0
+Info 214  [20:46:21.764] getCompletionData: Get previous token 2: 0
+Info 215  [20:46:21.765] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 216  [20:46:21.765] getCompletionData: Semantic work: 0
+Info 217  [20:46:21.765] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 218  [20:46:21.863] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 219  [20:46:21.878] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 27 structureChanged: false Elapsed: 15ms
+Info 220  [20:46:21.878] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 221  [20:46:21.881] getCompletionData: Get current token: 0
+Info 222  [20:46:21.881] getCompletionData: Is inside comment: 0
+Info 223  [20:46:21.881] getCompletionData: Get previous token 1: 0
+Info 224  [20:46:21.881] getCompletionData: Get previous token 2: 0
+Info 225  [20:46:21.881] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 226  [20:46:21.881] getCompletionData: Semantic work: 0
+Info 227  [20:46:21.882] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 228  [20:46:23.913] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 229  [20:46:23.930] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 28 structureChanged: false Elapsed: 17ms
+Info 230  [20:46:23.930] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 231  [20:46:23.930] getCompletionData: Get current token: 0
+Info 232  [20:46:23.930] getCompletionData: Is inside comment: 0
+Info 233  [20:46:23.931] getCompletionData: Get previous token 1: 1
+Info 234  [20:46:23.931] getCompletionData: Get previous token 2: 0
+Info 235  [20:46:23.931] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 236  [20:46:23.931] getCompletionData: Semantic work: 0
+Info 237  [20:46:24.905] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 238  [20:46:24.915] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 29 structureChanged: false Elapsed: 10ms
+Info 239  [20:46:24.915] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 240  [20:46:29.278] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 241  [20:46:29.290] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 30 structureChanged: false Elapsed: 12ms
+Info 242  [20:46:29.290] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 243  [20:46:30.46] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 244  [20:46:30.57] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 31 structureChanged: false Elapsed: 11ms
+Info 245  [20:46:30.57] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 246  [20:46:30.260] getCompletionData: Get current token: 0
+Info 247  [20:46:30.260] getCompletionData: Is inside comment: 0
+Info 248  [20:46:30.260] getCompletionData: Get previous token 1: 0
+Info 249  [20:46:30.260] getCompletionData: Get previous token 2: 0
+Info 250  [20:46:30.260] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 251  [20:46:30.267] getCompletionData: Semantic work: 7
+Info 252  [20:46:30.288] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 19
+Info 253  [20:46:30.858] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 254  [20:46:30.874] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 32 structureChanged: false Elapsed: 16ms
+Info 255  [20:46:30.875] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 256  [20:46:30.875] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 257  [20:46:30.894] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 33 structureChanged: false Elapsed: 19ms
+Info 258  [20:46:30.894] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 259  [20:46:33.376] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 260  [20:46:33.393] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 34 structureChanged: false Elapsed: 17ms
+Info 261  [20:46:33.393] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 262  [20:46:34.53] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 263  [20:46:34.64] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 35 structureChanged: false Elapsed: 11ms
+Info 264  [20:46:34.64] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 265  [20:46:35.120] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 266  [20:46:35.130] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 36 structureChanged: false Elapsed: 10ms
+Info 267  [20:46:35.130] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 268  [20:46:37.378] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 269  [20:46:37.388] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 37 structureChanged: false Elapsed: 10ms
+Info 270  [20:46:37.388] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 271  [20:46:38.598] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 272  [20:46:38.608] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 38 structureChanged: false Elapsed: 10ms
+Info 273  [20:46:38.608] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 274  [20:46:38.811] getCompletionData: Get current token: 0
+Info 275  [20:46:38.811] getCompletionData: Is inside comment: 0
+Info 276  [20:46:38.811] getCompletionData: Get previous token 1: 0
+Info 277  [20:46:38.811] getCompletionData: Get previous token 2: 0
+Info 278  [20:46:38.811] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 279  [20:46:38.814] getCompletionData: Semantic work: 2
+Info 280  [20:46:38.814] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 281  [20:46:39.72] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 282  [20:46:39.82] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 39 structureChanged: false Elapsed: 10ms
+Info 283  [20:46:39.82] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 284  [20:46:39.91] getCompletionData: Get current token: 0
+Info 285  [20:46:39.91] getCompletionData: Is inside comment: 0
+Info 286  [20:46:39.91] getCompletionData: Get previous token 1: 0
+Info 287  [20:46:39.92] getCompletionData: Get previous token 2: 1
+Info 288  [20:46:39.92] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 289  [20:46:39.93] getCompletionData: Semantic work: 1
+Info 290  [20:46:39.94] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 291  [20:46:40.22] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 292  [20:46:40.43] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 40 structureChanged: false Elapsed: 21ms
+Info 293  [20:46:40.43] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 294  [20:46:40.64] getCompletionData: Get current token: 0
+Info 295  [20:46:40.64] getCompletionData: Is inside comment: 0
+Info 296  [20:46:40.65] getCompletionData: Get previous token 1: 1
+Info 297  [20:46:40.65] getCompletionData: Get previous token 2: 0
+Info 298  [20:46:40.65] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 299  [20:46:40.66] getCompletionData: Semantic work: 1
+Info 300  [20:46:40.69] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 3
+Info 301  [20:46:40.323] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 302  [20:46:40.334] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 41 structureChanged: false Elapsed: 11ms
+Info 303  [20:46:40.334] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 304  [20:46:40.345] getCompletionData: Get current token: 0
+Info 305  [20:46:40.345] getCompletionData: Is inside comment: 0
+Info 306  [20:46:40.345] getCompletionData: Get previous token 1: 0
+Info 307  [20:46:40.345] getCompletionData: Get previous token 2: 0
+Info 308  [20:46:40.347] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 309  [20:46:40.347] getCompletionData: Semantic work: 0
+Info 310  [20:46:40.348] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 311  [20:46:40.470] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 312  [20:46:40.482] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 42 structureChanged: false Elapsed: 12ms
+Info 313  [20:46:40.482] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 314  [20:46:40.491] getCompletionData: Get current token: 0
+Info 315  [20:46:40.491] getCompletionData: Is inside comment: 0
+Info 316  [20:46:40.491] getCompletionData: Get previous token 1: 0
+Info 317  [20:46:40.491] getCompletionData: Get previous token 2: 0
+Info 318  [20:46:40.491] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 319  [20:46:40.492] getCompletionData: Semantic work: 1
+Info 320  [20:46:40.492] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 321  [20:46:42.28] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 322  [20:46:42.40] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 43 structureChanged: false Elapsed: 12ms
+Info 323  [20:46:42.41] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 324  [20:46:42.60] getCompletionData: Get current token: 0
+Info 325  [20:46:42.60] getCompletionData: Is inside comment: 0
+Info 326  [20:46:42.60] getCompletionData: Get previous token 1: 0
+Info 327  [20:46:42.60] getCompletionData: Get previous token 2: 0
+Info 328  [20:46:42.60] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 329  [20:46:42.61] getCompletionData: Semantic work: 0
+Info 330  [20:46:42.64] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2
+Info 331  [20:46:42.226] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 332  [20:46:42.241] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 44 structureChanged: false Elapsed: 15ms
+Info 333  [20:46:42.241] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 334  [20:46:42.251] getCompletionData: Get current token: 0
+Info 335  [20:46:42.251] getCompletionData: Is inside comment: 0
+Info 336  [20:46:42.251] getCompletionData: Get previous token 1: 0
+Info 337  [20:46:42.251] getCompletionData: Get previous token 2: 0
+Info 338  [20:46:42.251] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 339  [20:46:42.252] getCompletionData: Semantic work: 1
+Info 340  [20:46:42.252] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 341  [20:46:42.533] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 342  [20:46:42.546] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 45 structureChanged: false Elapsed: 13ms
+Info 343  [20:46:42.546] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 344  [20:46:42.559] getCompletionData: Get current token: 0
+Info 345  [20:46:42.559] getCompletionData: Is inside comment: 0
+Info 346  [20:46:42.559] getCompletionData: Get previous token 1: 0
+Info 347  [20:46:42.559] getCompletionData: Get previous token 2: 0
+Info 348  [20:46:42.559] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 349  [20:46:42.560] getCompletionData: Semantic work: 1
+Info 350  [20:46:42.560] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 351  [20:46:43.70] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 352  [20:46:43.84] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 46 structureChanged: false Elapsed: 13ms
+Info 353  [20:46:43.84] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 354  [20:46:43.94] getCompletionData: Get current token: 0
+Info 355  [20:46:43.94] getCompletionData: Is inside comment: 0
+Info 356  [20:46:43.94] getCompletionData: Get previous token 1: 0
+Info 357  [20:46:43.94] getCompletionData: Get previous token 2: 0
+Info 358  [20:46:43.94] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 359  [20:46:43.95] getCompletionData: Semantic work: 1
+Info 360  [20:46:43.95] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 361  [20:46:43.770] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 362  [20:46:43.783] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 47 structureChanged: false Elapsed: 12ms
+Info 363  [20:46:43.783] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 364  [20:46:44.829] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 365  [20:46:44.846] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 48 structureChanged: false Elapsed: 17ms
+Info 366  [20:46:44.846] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 367  [20:46:45.61] getCompletionData: Get current token: 0
+Info 368  [20:46:45.61] getCompletionData: Is inside comment: 0
+Info 369  [20:46:45.61] getCompletionData: Get previous token 1: 0
+Info 370  [20:46:45.61] getCompletionData: Get previous token 2: 0
+Info 371  [20:46:45.62] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 372  [20:46:45.68] getCompletionData: Semantic work: 6
+Info 373  [20:46:45.68] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 374  [20:46:45.140] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 375  [20:46:45.152] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 49 structureChanged: false Elapsed: 12ms
+Info 376  [20:46:45.152] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 377  [20:46:45.352] getCompletionData: Get current token: 0
+Info 378  [20:46:45.352] getCompletionData: Is inside comment: 0
+Info 379  [20:46:45.352] getCompletionData: Get previous token 1: 0
+Info 380  [20:46:45.352] getCompletionData: Get previous token 2: 0
+Info 381  [20:46:45.352] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 382  [20:46:45.358] getCompletionData: Semantic work: 6
+Info 383  [20:46:45.361] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 384  [20:46:46.39] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 385  [20:46:46.56] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 50 structureChanged: false Elapsed: 16ms
+Info 386  [20:46:46.56] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 387  [20:46:46.68] getCompletionData: Get current token: 0
+Info 388  [20:46:46.69] getCompletionData: Is inside comment: 0
+Info 389  [20:46:46.69] getCompletionData: Get previous token 1: 0
+Info 390  [20:46:46.69] getCompletionData: Get previous token 2: 0
+Info 391  [20:46:46.69] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 392  [20:46:46.70] getCompletionData: Semantic work: 1
+Info 393  [20:46:46.70] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 394  [20:46:46.781] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 395  [20:46:46.826] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 51 structureChanged: false Elapsed: 45ms
+Info 396  [20:46:46.826] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 397  [20:46:47.573] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 398  [20:46:47.589] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 52 structureChanged: false Elapsed: 16ms
+Info 399  [20:46:47.590] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 400  [20:46:47.751] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 401  [20:46:47.773] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 53 structureChanged: false Elapsed: 22ms
+Info 402  [20:46:47.773] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 403  [20:46:48.514] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 404  [20:46:48.544] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 54 structureChanged: false Elapsed: 30ms
+Info 405  [20:46:48.544] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 406  [20:46:50.684] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 407  [20:46:50.694] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 55 structureChanged: false Elapsed: 10ms
+Info 408  [20:46:50.694] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 409  [20:46:50.918] getCompletionData: Get current token: 0
+Info 410  [20:46:50.918] getCompletionData: Is inside comment: 0
+Info 411  [20:46:50.918] getCompletionData: Get previous token 1: 0
+Info 412  [20:46:50.918] getCompletionData: Get previous token 2: 0
+Info 413  [20:46:50.918] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 414  [20:46:50.924] getCompletionData: Semantic work: 6
+Info 415  [20:46:50.924] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 416  [20:46:56.429] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 417  [20:46:56.448] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 56 structureChanged: false Elapsed: 19ms
+Info 418  [20:46:56.448] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 419  [20:46:57.238] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 420  [20:46:57.254] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 57 structureChanged: false Elapsed: 16ms
+Info 421  [20:46:57.254] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 422  [20:47:31.154] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 423  [20:47:31.173] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 58 structureChanged: false Elapsed: 19ms
+Info 424  [20:47:31.173] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 425  [20:47:32.975] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 426  [20:47:32.985] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 59 structureChanged: false Elapsed: 10ms
+Info 427  [20:47:32.986] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 428  [20:47:33.772] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 429  [20:47:33.796] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 60 structureChanged: false Elapsed: 24ms
+Info 430  [20:47:33.796] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 431  [20:47:33.974] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 432  [20:47:34.32] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 61 structureChanged: true Elapsed: 57ms
+Info 433  [20:47:34.32] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Info 434  [20:47:48.589] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 435  [20:47:48.647] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 62 structureChanged: true Elapsed: 58ms
+Info 436  [20:47:48.647] Different program with same set of files:: oldProgram.structureIsReused:: 1
+Err 437   [20:49:6.317] Exception on executing command {"command":"signatureHelp","seq":2512,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":24,"offset":25}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 438   [20:49:25.752] Exception on executing command {"command":"signatureHelp","seq":2698,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":51,"offset":9}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 439   [20:50:10.275] Exception on executing command {"command":"signatureHelp","seq":2890,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":24,"offset":19}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 440   [20:50:14.652] Exception on executing command {"command":"signatureHelp","seq":2924,"type":"request","arguments":{"file":"/home/renne/Documents/ufc/s8/proj2/alpha/app.js","line":24,"offset":16}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/renne/.nvm/versions/node/v13.0.1/lib/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:325:12)
+        at readableAddChunk (_stream_readable.js:300:11)
+        at Socket.Readable.push (_stream_readable.js:234:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 441  [20:50:29.732] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 442  [20:50:29.761] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 63 structureChanged: false Elapsed: 29ms
+Info 443  [20:50:29.761] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 444  [20:50:36.151] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 445  [20:50:36.165] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 64 structureChanged: false Elapsed: 14ms
+Info 446  [20:50:36.165] Different program with same set of files:: oldProgram.structureIsReused:: 2

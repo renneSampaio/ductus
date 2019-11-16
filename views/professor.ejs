@@ -1,0 +1,120 @@
+<div class="flutue responsive">
+        <div>
+          <img src="<%= docente.image %>" class="image-responsive">
+
+          <div class="flutue-content">
+            <h3> <%= docente.nome %></h3>
+            <form action="/api/solicitacao/<%=docente.id_lattes %>" method="POST">
+              <button type="submit" class="btn bg-blue inverse">Solicitar Orientação</button>
+            </form>
+            <p>
+              bla bla bla bla eu ensino isso isso e isso aqui
+            </p>
+          </div>
+        </div>
+      </div>    
+
+<div class="box-collapse">
+  <div class="box-collapse-trigger has-picto">    
+    <button type="button" aria-expanded="false" aria-controls="collapse1" data-collapse="collapse1">
+      Apresentação    
+    </button>
+
+  </div>
+
+  <div class="box-collapse-content" id="collapse1">
+      <div class="column">
+          <!--<div class="box-1-visual">
+            <img src="images/visual-buddy.jpg" alt="" />
+          </div> -->
+          <div class="box-1-content">
+            <p>
+                <%= apresentacao %>
+            </p>
+          </div>
+    </div>
+  </div>
+
+<!---   <div class="box-collapse-trigger has-picto">
+    
+    <button type="button" aria-expanded="false" aria-controls="collapse2" data-collapse="collapse2">
+      Endereço    
+    </button>
+
+  </div>
+
+  <div class="box-collapse-content" id="collapse2">
+      <div class="column">
+          <!- <div class="box-1-visual">
+            <img src="images/visual-buddy.jpg" alt="" />
+          </div> ->
+          <div class="box-1-content">
+            <p>
+              Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua.
+            </p>
+          </div>
+    </div>
+  </div> --->
+
+  <div class="box-collapse-trigger has-picto">
+    
+    <button type="button" aria-expanded="false" aria-controls="collapse3" data-collapse="collapse3">
+      Formação
+    </button>
+
+  </div>
+
+  <div class="box-collapse-content" id="collapse3">
+      <div class="column">
+          <!--<div class="box-1-visual">
+            <img src="images/visual-buddy.jpg" alt="" />
+          </div> -->
+          <div class="box-1-content">
+            <% formacao.graduacao.forEach(function(grad){ %>
+            <p>
+              <%= grad %>
+            </p>
+            <% }); %>
+            <% formacao.mestrado.forEach(function(grad){ %>
+            <p>
+              <%= grad %>
+            </p>
+            <% }); %>
+            <% formacao.doutorado.forEach(function(grad){ %>
+            <p>
+              <%= grad %>
+            </p>
+            <% }); %>
+          </div>
+    </div>
+  </div>
+  
+  <div class="box-collapse-trigger has-picto">
+    
+    <button type="button" aria-expanded="false" aria-controls="collapse4" data-collapse="collapse4">
+      Publicações
+    </button>
+
+  </div>
+
+  <div class="box-collapse-content" id="collapse4">
+      <div class="column">
+        <!--<div class="box-1-visual">
+            <img src="images/visual-buddy.jpg" alt="" />
+          </div> -->
+          <div class="box-1-content">
+            <% publicacoes.forEach(function(pub){ %>
+              <p>
+                <%= pub %>
+              </p>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  <div id="pageNavOverlay"></div> 

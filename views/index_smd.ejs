@@ -1,0 +1,106 @@
+<div class="tabs-wrapper" id="tabsWrapper">
+    <ul role="tablist" class="tabs" arial-label="tabs-description">
+      <li>
+        <button role="tab" aria-selected="true" aria-controls="tab-1">Sobre</button>
+        <div tabindex="0" role="tabpanel" id="tab-1" aria-labelledby="tab-1" tabindex="0">
+          
+          <div class="photo-bg" id="Foto_SMD">
+            <img src="/images/Foto-SMD.png">
+          </div>
+          
+          <p style="text-align: center; margin-top: 15vh; color: #1C1C1C;">
+            Popularmente chamado de SMD, o curso forma profissionais de vários perfis capacitados em produção de mídias digitais e desenvolvimento de sistemas multimídias, como sistemas web e para dispositivos móveis, jogos digitais e animações gráficas. Atualmente, o curso possui 4 trilhas de especialização: <span style="font-weight: bold;"> Audiovisual, Design Digital, Sistemas e Jogos.</span>
+          </p> 
+  
+          <div class="linha"></div>
+  
+          <h3>Como Funciona o TCC?</h3>
+  
+          <h5>1. Monografia</h5>
+          <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+  
+          <h5>2. Produto e Artigo</h5>
+          <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+  
+          <h5>3. Produto e Relatório Técnico</h5>
+          <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+  
+  
+        </div>>
+      </li>
+      <li>
+        <button role="tab" aria-selected="false" aria-controls="tab-2">Audiovisual</button>
+        <div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" hidden="">
+
+            <% docentes.filter(docente => docente.trilhas.includes('Audiovisual')).forEach(function(docente){ %>
+              <div class="flutue responsive">
+                <img src="<%= docente.image%>" class="image-responsive" onclick = "location.href='/<%= docente.id_lattes %>';"> 
+                <div class="flutue-content">
+                  <h3> <%= docente.nome %> </h3 onclick = "location.href='/<%= docente.id_lattes %>';">
+                <button type="button" class="btn bg-blue inverse">Solicitar Orientação</button>
+                  <p onclick = "location.href='/<%= docente.id_lattes %>';">
+                    bla bla bla bla eu ensino isso isso e isso aqui
+                  </p>
+                </div>
+              </div>
+            <% }); %>
+
+        </div>
+      </li>
+  
+      <li>
+        <button role="tab" aria-selected="false" aria-controls="tab-3">Design</button>
+        <div tabindex="0" role="tabpanel" id="tab-3" aria-labelledby="tab-3" tabindex="0" hidden="">        
+            <% docentes.filter(docente => docente.trilhas.includes('Design')).forEach(function(docente){ %>
+              <div class="flutue responsive">
+                <img src="<%= docente.image%>" class="image-responsive" onclick = "location.href='/<%= docente.id_lattes %>';"> 
+                <div class="flutue-content">
+                  <h3> <%= docente.nome %> </h3 onclick = "location.href='/<%= docente.id_lattes %>';">
+                <button type="button" class="btn bg-blue inverse">Solicitar Orientação</button>
+                  <p onclick = "location.href='/<%= docente.id_lattes %>';">
+                    bla bla bla bla eu ensino isso isso e isso aqui
+                  </p>
+                </div>
+              </div>
+            <% }); %>
+        </div>
+      </li>
+  
+      <li>
+        <button role="tab" aria-selected="false" aria-controls="tab-4">Sistemas</button>
+        <div tabindex="0" role="tabpanel" id="tab-4" aria-labelledby="tab-4" tabindex="0" hidden="">
+            <% docentes.filter(docente => docente.trilhas.includes('Sistemas')).forEach(function(docente){ %>
+              <div class="flutue responsive">
+                <img src="<%= docente.image%>" class="image-responsive" onclick = "location.href='/<%= docente.id_lattes %>';"> 
+                <div class="flutue-content">
+                  <h3> <%= docente.nome %> </h3 onclick = "location.href='/<%= docente.id_lattes %>';">
+                <button type="button" class="btn bg-blue inverse">Solicitar Orientação</button>
+                  <p onclick = "location.href='/<%= docente.id_lattes %>';">
+                    bla bla bla bla eu ensino isso isso e isso aqui
+                  </p>
+                </div>
+              </div>
+            <% }); %>        
+        </div>
+      </li>
+
+      <li>
+          <button role="tab" aria-selected="false" aria-controls="tab-5">Jogos</button>
+          <div tabindex="0" role="tabpanel" id="tab-5" aria-labelledby="tab-5" tabindex="0" hidden="">
+              <% docentes.filter(docente => docente.trilhas.includes('Jogos')).forEach(function(docente){ %>
+                <div class="flutue responsive">
+                  <img src="<%= docente.image%>" class="image-responsive" onclick = "location.href='/<%= docente.id_lattes %>';"> 
+                  <div class="flutue-content">
+                    <h3> <%= docente.nome %> </h3 onclick = "location.href='/<%= docente.id_lattes %>';">
+                  <button type="button" class="btn bg-blue inverse">Solicitar Orientação</button>
+                    <p onclick = "location.href='/<%= docente.id_lattes %>';">
+                      bla bla bla bla eu ensino isso isso e isso aqui
+                    </p>
+                  </div>
+                </div>
+              <% }); %>        
+          </div>
+        </li>
+    </ul>
+  </div>
+    <div id="pageNavOverlay"></div> 
