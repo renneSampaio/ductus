@@ -5,10 +5,12 @@ const passport = require('passport');
 const {ensureAuthenticated} = require('../config/auth');
 
 const Aluno = require('../models/Aluno')
+const Solicitacao = require('../models/Solicitacao')
+const Docente = require('../models/Docente')
 const Curso = require('../models/Curso')
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    res.render('/', {
+    res.render('index', {
         user: req.user
     })
 });
@@ -48,7 +50,8 @@ router.post('/register', (req, res) => {
             errors,
             name,
             email,
-            curso
+            curso,
+            user: req.user
         });
     } else {
         Aluno.findOne({email: email})
@@ -100,6 +103,41 @@ router.get('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');
     res.redirect('/');
+});
+
+router.get('/solicitacoes', (req, res) => {
+    Solicitacao.find({}).then(solicitacoes => {
+        if (solicitacoes) {
+
+            solic_data = [];
+
+            if (solicitacoes.length == 0) {
+                res.render('solicitacoes', {
+                    user: req.user,
+                    solicitacoes: solic_data,
+                });
+            }
+
+            solicitacoes.forEach(solicitacao => {
+                Docente.findOne({ id_lattes: solicitacao.id_lattes }).then(docente => {
+                    if (!docente) { return; }
+
+                    solic_data.push(
+                        {
+                            solicitacao: solicitacao,
+                            docente: docente
+                        }
+                    );
+
+                    res.render('solicitacoes',
+                    {
+                        user: req.user,
+                        solicitacoes: solic_data
+                    });
+                });
+            });
+        };
+    })
 });
 
 module.exports = router;
