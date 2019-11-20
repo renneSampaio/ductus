@@ -5,46 +5,32 @@ const nodemailer = require('nodemailer');
 const Docente = require('../../models/Docente')
 const Solicitacao = require('../../models/Solicitacao')
 
-router.notificacoes = (req, res, next) => {
+router.notificacoes = async (req, res, next) => {
     if (req.isAuthenticated()) {
-        let solic_data = [];
-        res.locals.solicitacoes = solic_data;
-        Solicitacao.find({ aluno: req.user._id, respondido: true }).then(solicitacoes => {
-            if (solicitacoes) {
+        res.locals.solicitacoes = []
+        const solicitacoes = await Solicitacao.find({ aluno: req.user._id, respondido: true });
 
-                var solic_data = [];
+        if (!solicitacoes) {
+            return;
+        }
 
-                if (solicitacoes.length == 0) {
-                    res.locals.solicitacoes = solic_data;
-                }
+        for (let i = 0; i < solicitacoes.length; i++) {
+            const solicitacao = solicitacoes[i];
+            const docente = await Docente.findOne({ id_lattes: solicitacao.id_lattes });
 
-                solicitacoes.forEach(solicitacao => {
-                    if (solicitacao.lido == true) {
-                        return;
+            if (docente) {
+                res.locals.solicitacoes.push(
+                    {
+                        solicitacao: solicitacao,
+                        docente: docente,
                     }
-
-                    
-                    Docente.findOne({ id_lattes: solicitacao.id_lattes }).then(docente => {
-                        if (!docente) { return; }
-                        
-                        console.log("teste");
-                        solic_data.push(
-                            {
-                                solicitacao: solicitacao,
-                                docente: docente
-                            }
-                        );
-
-                        res.locals.solicitacoes = solic_data;
-                    });
-                });
-            } else {
-                let solic_data = [];
-                res.locals.solicitacoes = solic_data;
+                );
             }
-        })
+        }
+        next();
+    } else {
+        next();
     }
-    next();
 }
 
 let transporter = nodemailer.createTransport({
