@@ -8,11 +8,21 @@ const Aluno = require('../models/Aluno')
 const Solicitacao = require('../models/Solicitacao')
 const Docente = require('../models/Docente')
 const Curso = require('../models/Curso')
+const Favorito = require('../models/Favorito')
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
+
+    const solicitacoes_query = Solicitacao.find({aluno: req.user._id})
+    const solicitacoes = await solicitacoes_query.exec();
+
+    const favoritos_query = Favorito.find({aluno: req.user._id});
+    const favoritos = await favoritos_query.exec();
+
     res.render('index', {
-        user: req.user
-    })
+        user: req.user,
+        solicitacoes: solicitacoes,
+        favoritos: favoritos,
+    });
 });
 
 // Login Page
@@ -138,6 +148,20 @@ router.get('/solicitacoes', (req, res) => {
             });
         };
     })
+});
+
+router.post('/favoritar/:id_lattes', (req, res) => {
+    if (req.user == undefined) res.sendStatus(204);
+    const id_lattes = req.params.id_lattes;
+
+    const favorito = new Favorito({
+        id_lattes,
+        aluno: req.user.id
+    })
+
+    favorito.save();
+
+    res.sendStatus(204);
 });
 
 module.exports = router;
