@@ -80,11 +80,9 @@
 
   <button id="icone-pesquisa"> <img src="/images/icons/pesquisa.png" style="" alt=""></button>
 
-  <% if (locals.solicitacoes.length == 0) { %>
-  <button id="icone-notificacao" onclick="location.href='notificacoes.html';"> <img
-      src="/images/icons/notificacao.png"></button>
-      <p>
-        10
-      </p>
+  <% if (locals.solicitacoes.lenght > 0) { %>
+  <button id="icone-notificacao" onclick="location.href='notificacoes.html';">
+      <img src="/images/icons/notificacao.png">
+  </button>
   <% } %>
 </div>
