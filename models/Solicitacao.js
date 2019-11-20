@@ -19,10 +19,10 @@ const SolicitacaoSchema = new mongoose.Schema({
         default: false,
         required: false,
     },
-    lido: {
-        type: Boolean,
-        default: false,
-        required: false,
+    tipo: {
+        type: String,
+        default: "tcc",
+        required: true,
     },
     date: {
         type: Date,
