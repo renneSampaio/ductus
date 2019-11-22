@@ -10,7 +10,7 @@ const Docente = require('../models/Docente')
 const Curso = require('../models/Curso')
 const Favorito = require('../models/Favorito')
 
-router.get('/dashboard', ensureAuthenticated, (req, res) => {
+router.get('/dashboard', ensureAuthenticated, async (req, res) => {
 
     const solicitacoes_query = Solicitacao.find({aluno: req.user._id})
     const solicitacoes = await solicitacoes_query.exec();

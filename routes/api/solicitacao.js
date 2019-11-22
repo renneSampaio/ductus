@@ -98,7 +98,7 @@ router.post('/solicitacao/:id_lattes', (req, res) => {
 
 router.get('/solicitacao/aceitar/:id', (req, res) => {
     Solicitacao.findByIdAndUpdate(req.params.id, { respondido: true, aceito: true }).then(
-        solic => {
+        async (solic) => {
             if (!solic) {
                 res.send("Solicitação não encontrada");
                 return;
@@ -126,7 +126,7 @@ router.get('/solicitacao/aceitar/:id', (req, res) => {
 
 router.get('/solicitacao/recusar/:id', (req, res) => {
     Solicitacao.findByIdAndUpdate(id, { respondido: true, aceito: false }).then(
-        solic => {
+        async solic => {
             if (!solic) {
                 res.send("Solicitação não encontrada");
                 return;
