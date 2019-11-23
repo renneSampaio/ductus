@@ -48,14 +48,14 @@ router.get('/login', (req, res) => {
     if (req.isAuthenticated()) {
             res.redirect('/');
     }
-    res.render('login', {user: req.user})
+    res.render('login', {user: req.user, login: true})
 });
 
 //Register page
 router.get('/register', (req, res) => { 
     Curso.find({}).then( cursos => {
         if (cursos) {
-            res.render('register', { user: req.user, cursos: cursos });
+            res.render('login', { user: req.user, cursos: cursos, login:false });
         }
     });
 });
