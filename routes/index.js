@@ -6,18 +6,31 @@ const fast_xml_parser = require('fast-xml-parser');
 
 const Docente = require('../models/Docente')
 const Curriculo = require('../models/Curriculo')
+const Favorito = require('../models/Favorito')
 
 router.get('/', (req, res) => {
     res.render('index', { user: req.user});
 });
 
+router.get('/cursos', (req, res) => res.render('cursos', { user: req.user, pag: "Cursos" }));
+
 router.get('/index_smd', (req, res) => {
 
     Docente.find({})
-        .then(docentes => {
+        .then(async (docentes) => {
+
+            for (let i = 0; i < docentes.length; i++) {
+                docentes[i].favoritado = false;
+                if (req.isAuthenticated()) {
+                    const favorito_query = Favorito.exists({id_lattes: docentes[i].id_lattes, aluno: req.user._id});
+                    docentes[i].favoritado = await favorito_query;
+                }
+            }
+
             res.render('index_smd', {
                 docentes: docentes,
-                user: req.user
+                user: req.user,
+                pag: "Sistemas e Mídias Digitais"
             });
         });
 
@@ -28,21 +41,29 @@ router.get('/:id', (req, res) => {
     let id = req.params.id;
 
     Docente.findOne({ id_lattes: id })
-        .then(docente => {
+        .then( async (docente) => {
             if (docente) {
                 console.log(docente.nome)
                 Curriculo.findOne({ id_lattes: id })
-                    .then(curriculo => {
+                    .then(async (curriculo) => {
                         if (!curriculo) {
                             res.redirect('/');
                         }
+
+                        docente.favoritado = false;
+                        if (req.isAuthenticated()) {
+                            const favorito_query = Favorito.exists({id_lattes: id, aluno: req.user._id});
+                            docente.favoritado = await favorito_query;
+                        }
+
 
                         res.render('professor', {
                             docente: docente,
                             apresentacao: curriculo.apresentacao,
                             formacao: curriculo.formacao,
                             publicacoes: curriculo.publicacoes,
-                            user: req.user
+                            user: req.user,
+                            pag: "Docente"
                         });
                     })
 
