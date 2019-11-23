@@ -9,6 +9,7 @@ const Solicitacao = require('../models/Solicitacao')
 const Docente = require('../models/Docente')
 const Curso = require('../models/Curso')
 const Favorito = require('../models/Favorito')
+const Notificacao = require('../models/Notificacao')
 
 router.get('/perfil', ensureAuthenticated, async (req, res) => {
 
@@ -176,18 +177,27 @@ router.post('/favoritar/:id_lattes', (req, res) => {
         if (favorito) {
             Favorito.remove({id_lattes}).exec();
         } else {
-    const favorito = new Favorito({
-        id_lattes,
-        aluno: req.user.id
-    })
-
-    favorito.save();
+            const favorito = new Favorito({
+                id_lattes,
+                aluno: req.user.id
+            })
+            
+            favorito.save();
         }
     })
 
     console.log("Favoritado")
 
     res.sendStatus(204);
+});
+
+router.get('/notificacoes', ensureAuthenticated, async (req, res) => {
+    const notificacoes_query = Notificacao.find({});
+    const notificacoes = await notificacoes_query.exec();
+
+    console.log(notificacoes)
+
+    res.render('notificacoes', {user: req.user, notificacoes: notificacoes})
 });
 
 module.exports = router;

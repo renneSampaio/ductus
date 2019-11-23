@@ -112,21 +112,22 @@ router.get('/solicitacao/aceitar/:id', (req, res) => {
             const notificacao = new Notificacao(
                 {
                     aluno: solic.aluno,
-                    texto
+                    texto: texto,
+                    lido: false
                 }
             );
 
-            notificacao.save();
-
-            console.log(`Solicitacao aceita ${req.params.id_lattes}`);
-            res.send(`Solicitacao aceita ${req.params.id_lattes}`);
+            notificacao.save().then( notificacao => {
+                console.log(notificacao.texto);
+                res.send(notificacao.texto);
+            });
         }
     )
 });
 
 router.get('/solicitacao/recusar/:id', (req, res) => {
-    Solicitacao.findByIdAndUpdate(id, { respondido: true, aceito: false }).then(
-        async solic => {
+    Solicitacao.findByIdAndUpdate(req.params.id, { respondido: true, aceito: false }).then(
+        async (solic) => {
             if (!solic) {
                 res.send("Solicitação não encontrada");
                 return;
@@ -136,16 +137,20 @@ router.get('/solicitacao/recusar/:id', (req, res) => {
             const docente = await docente_query.exec();
 
             const texto = `${docente.nome} respondeu sua solicitação.`
+            
 
             const notificacao = new Notificacao(
                 {
                     aluno: solic.aluno,
-                    texto
+                    texto: texto,
+                    lido: false
                 }
             );
 
-            console.log(`Solicitacao recusada ${req.params.id_lattes}`);
-            res.send(`Solicitacao recusada ${req.params.id_lattes}`);
+            notificacao.save().then( notificacao => {
+                console.log(notificacao.texto);
+                res.send(notificacao.texto);
+            });
         }
     )
 });
