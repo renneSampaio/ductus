@@ -1,0 +1,18 @@
+<div class="slide">
+    <div class="professores_favoritados">
+        <div>
+        <h5>
+            <%= docente.nome %>
+        </h5>
+        <img src="<%= docente.image %>" class="image-responsive">
+        <div>
+            <img src="/images/icons/mensagem.png" id="btn_mensagem">
+            <form action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
+                <button style="border: none; padding: 0; width: 50px;">
+                    <img src="/images/icons/btn_favoritar.png" id="btn_favoritar">
+                </button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
