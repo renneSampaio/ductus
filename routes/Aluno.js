@@ -172,12 +172,20 @@ router.post('/favoritar/:id_lattes', (req, res) => {
     if (req.user == undefined) res.sendStatus(204);
     const id_lattes = req.params.id_lattes;
 
+    Favorito.findOne({id_lattes, aluno: req.user.id}).then( favorito => {
+        if (favorito) {
+            Favorito.remove({id_lattes}).exec();
+        } else {
     const favorito = new Favorito({
         id_lattes,
         aluno: req.user.id
     })
 
     favorito.save();
+        }
+    })
+
+    console.log("Favoritado")
 
     res.sendStatus(204);
 });
