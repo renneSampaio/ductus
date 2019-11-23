@@ -17,7 +17,7 @@ const SolicitacaoSchema = new mongoose.Schema({
     aceito: {
         type: Boolean,
         default: false,
-        required: false,
+        required: true,
     },
     tipo: {
         type: String,
