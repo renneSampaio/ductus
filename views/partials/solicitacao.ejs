@@ -1,0 +1,10 @@
+<a>
+    <img src="/images/icons/solicitacao.png">
+    <% if (!solicitacao.respondido) { %>
+        <%= docente.nome %>: <span style="font-weight: bold">Pendente</span>
+    <% } else if (solicitacao.aceito) { %>
+        <%= docente.nome %>: <span style="font-weight: bold">Aceita</span>
+    <% } else { %>
+        <%= docente.nome %>: <span style="font-weight: bold">Recusada</span>
+    <% } %>
+</a>

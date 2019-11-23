@@ -1,64 +1,38 @@
 <div class="page-wrapper">
-  <header class="page-header" role="banner">
-    <div id = "pageNav">      
-      <div class="page-nav" id="navOne">
-        <nav role="navigation">
-
-          <div id="profile-header">
-            <div>
-              <button type="button" class="btn bg-white inverse fal fa-angle-right" onclick="location.href='/aluno/login';">Login</button>              
-            </div>
-          </div>
-
-          <ul class="nav-primary">
-            <li>            
-              <a href="index.html">
+    <header class="page-header" role="banner">
+      <div id = "pageNav">      
+        <div class="page-nav" id="navOne">
+          <nav role="navigation">          
+            <div id="profile-header">
+              <span id="profile-circle"></span>
+              <div>
+                <h4>Olá, visitante!</h4>
+                <a id="btn_login" href="/aluno/login">
+                  Login
+                </a>    
+                <a id="btn_cadastro" href="/aluno/register">
+                 Cadastro
+               </a>      
+             </div>            
+           </div>
+  
+           <ul class="nav-primary">
+            <li>
+              <a href="/index">
                 <img src="/images/icons/home.png"class="icones">
                 Início
               </a>
             </li>
-            <li>            
-              <a href="cursos.html">
+            
+            <li>
+              <a href="/cursos">
                 <img src="/images/icons/cursos.png"class="icones">
                 Cursos
               </a>
             </li>
-            <li>            
-              <a>
-                <img src="/images/icons/ajuda.png"class="icones">
-                Ajuda
-              </a>
-            </li>
           </ul>
-<!--
-            <ul class="nav-primary" id="last-itens">
-            <li>            
-              <a>
-                <span class="dot"></span> 
-                Ajuda
-              </a>
-            </li>
-            <li>            
-              <a>
-                <span class="dot"></span> 
-                Logout
-              </a>
-            </li> 
-          </ul>
-        -->
         </nav>
       </div>
     </div>
-  </header> 
-</div> 
-  <div class="page-header-mobile">
-    <img class="logo" src="/images/logo-ductu.png"  alt=" " />
-
-    <button class="trigger-nav-container" data-trigger-nav="navOne">
-          <img src="/images/icons/burger-icon.png"id="icone-menu">
-    </button>
-
-    <button id="icone-pesquisa" > <img src="/images/icons/pesquisa.png" style="" alt=""></button>
-    
-    <button id="icone-notificacao" onclick="location.href='notificacoes.html';"> <img src="/images/icons/notificacao.png"></button>
-  </div>
+  </header>
+  </div> 

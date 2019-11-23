@@ -1,0 +1,24 @@
+<div class="flutue responsive">
+        <img src="<%= docente.image %>" class="image-responsive" onclick = "location.href='/<%= docente.id_lattes %>';"> 
+        <div class="flutue-content">
+        <div>
+            <form action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
+                <button type="submit">
+                    <%= docente.favoritado %>
+                    <img class="favorito" src="images/icons/<%= (docente.favoritado)? 'favoritado': 'favoritar' %>.png">
+                </button>
+            </form>
+          </div>
+          <h3  onclick = "location.href='/<%= docente.id_lattes %>';"> <%= docente.nome %></h3>
+            <span class="dot" id="dot_disponivel_projetos"></span>
+            <span id="disponivel_projetos">
+              Disponível apenas para projetos.
+            </span>
+          <p onclick = "location.href='/<%= docente.id_lattes %>';">
+            Professor Mestre do curso de Sistemas e Mídias Digitais.
+          </p>
+          <span class="tag"> Animação </span>
+          <span class="tag"> Ilustração </span>
+          <span class="tag"> Design<span style="visibility: hidden;">_</span>Gráfico</span>
+        </div>
+</div>

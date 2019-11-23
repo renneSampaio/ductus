@@ -4,7 +4,7 @@
 
           <div class="flutue-content">
             <h3> <%= docente.nome %></h3>
-            <form action="/api/solicitacao/<%=docente.id_lattes %>" method="POST">
+            <form action="/api/solicitacao/<%= docente.id_lattes %>" method="POST">
               <button type="submit" class="btn bg-blue inverse">Solicitar Orientação</button>
             </form>
             <p>

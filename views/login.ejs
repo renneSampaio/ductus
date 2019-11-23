@@ -1,17 +1,59 @@
-<div>
-
-    <form action="/aluno/login" method="POST">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter Email" />
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter Password" />
-
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
-    <p class="lead mt-4">
-        Não tem conta? <a href="/aluno/register"> Registre-se</a>
-    </p>
-</div>
-
+<div class="tabs-wrapper" id="tabsWrapper">
+        <div id="fundo-wrapper">    
+          <ul role="tablist" class="tabs" arial-label="tabs-description">
+            <li id="cadastro">
+              <button role="tab" aria-selected="<%= !login %>" aria-controls="tab_01">
+                Cadastro
+              </button>
+    
+              <div tabindex="0" role="tabpanel" id="tab_01" aria-labelledby="tab_01" tabindex="0"  hidden="">
+                <form style="margin-right: 10%;" action="/aluno/register" method="POST">
+                  Nome:
+                  <input type="text" name="name" required><br>
+                  
+                  Curso:
+                  <select name="curso">
+                    <option selected disabled>Escolha um curso</option>
+                    <option value="admin"> Administração</option>
+                    <option value="biblio"> Biblioteconomia</option>
+                    <option value="cieambi"> Ciências Ambientais</option>
+                    <option value="farma"> Farmácia</option>
+                    <option value="medi"> Medicina</option>
+                    <option value="ocean"> Oceanografia</option>
+                    <option value="smd"> Sistemas e Mídias Digitais</option>
+                    <option value="zootec"> Zootecnia</option>
+                  </select>
+    
+                  E-mail:
+                  <input type="text" name="email" required><br>
+    
+                  Senha:
+                  <input type="password" name="password" required><br>
+                  
+                  Confirmar senha:
+                  <input type="password" name="password2" required><br>
+                  
+                  <input type="submit" value="Entrar" style=" width: 40%; font-size: 20px; font-weight: bold; margin-top: 20%; margin-left: 30%; margin-right: auto; margin-bottom: 5%; text-align: center;">
+                </form>
+              </div>
+            </li>
+    
+            <li id="login">
+              <button role="tab" aria-selected="<%= login %>" aria-controls="tab_02">
+                Login
+              </button>
+    
+              <div tabindex="0" role="tabpanel" id="tab_02" aria-labelledby="tab_02" tabindex="0">
+                <form style="margin-right: 10%;" action="/aluno/login" method="POST">
+                  E-mail:
+                  <input type="email" name="email"><br>
+                  Senha:
+                  <input type="password" name="password"><br>
+                  <input type="submit" value="Entrar" style=" width: 40%; font-size: 20px; font-weight: bold; margin-top: 20%; margin-left: 30%; margin-right: auto; margin-bottom: 5%; text-align: center;">
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
 <div id="pageNavOverlay"></div> 

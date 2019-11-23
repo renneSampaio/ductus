@@ -3,3 +3,22 @@
 <% } else {%>
   <% include ./menu_logado %>
 <% } %>
+<div class="page-header-mobile">
+  <img class="logo" src="/images/logo-ductu.png"  alt=" " />
+
+  <button class="trigger-nav-container" data-trigger-nav="navOne">
+        <img src="/images/icons/burger-icon.png"id="icone-menu">
+  </button>
+
+  <button id="icone-pesquisa" > <img src="/images/icons/pesquisa.png" style="" alt=""></button>
+  
+  <button id="icone-notificacao" onclick="location.href='/aluno/notificacoes';"> <img src="/images/icons/notificacao.png"></button>
+  <% if (typeof pag != 'undefined')  { %>
+  <div class="box-nav">
+    <a href="javascript:void(0)" onClick="history.go(-1); return false;">
+      <img src="./images/arrow-thin-left.png" class="icon-nav">
+    </a>
+      <h3><%= pag %></h3> 
+    </div>
+  <% } %>
+</div>

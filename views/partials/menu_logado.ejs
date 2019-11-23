@@ -3,21 +3,14 @@
     <div id="pageNav">
       <div class="page-nav" id="navOne">
         <nav role="navigation">
-
           <div id="profile-header">
-            <% if (user != undefined) {%>
-            <img src="/images/profile-photo.jpg">
+            <img src="/images/profile-photo.jpg" id="profile-photo">
             <div>
               <h4>Olá, <%= user.name %></h4>
-              <button type="button" class="btn bg-white inverse fal fa-angle-right"
-                onclick="location.href='/aluno/dashboard';">Ver Perfil</button>
+              <a href="/aluno/perfil">
+                <img src="/images/icons/ver perfil.png" id="ver_perfil">
+              </a>
             </div>
-            <% } else {%>
-            <div>
-              <button type="button" class="btn bg-white inverse fal fa-angle-right"
-                onclick="location.href='/aluno/login';">Login</button>
-            </div>
-            <% } %>
           </div>
 
           <ul class="nav-primary">
@@ -29,60 +22,47 @@
             </li>
             <li>
               <a href="/index_smd">
-                <img src="/images/icons/home.png" class="icones">
+                <img src="/images/icons/meu_curso.png" class="icones">
                 Meu Curso
               </a>
             </li>
             <li>
-              <a href="/aluno/solicitacoes">
-                <img src="/images/icons/home.png" class="icones">
+              <a href="/aluno/perfil">
+                <img src="/images/icons/favoritos.png" class="icones">
+                Favoritos
+              </a>
+            </li>
+            <li>
+              <a href="/aluno/perfil">
+                <img src="/images/icons/solicitacao.png" class="icones">
                 Solicitações
               </a>
             </li>
             <li>
-              <a href="/">
+              <a href="/cursos">
                 <img src="/images/icons/cursos.png" class="icones">
                 Cursos
               </a>
             </li>
             <li>
-              <a href="ajuda">
-                <img src="/images/icons/ajuda.png" class="icones">
-                Ajuda
-              </a>
-            </li>
-            <li>
               <a>
-                <img src="/images/icons/ajuda.png" class="icones">
+                <img src="/images/icons/config.png" class="icones">
                 Configurações
               </a>
             </li>
+
           </ul>
-            <ul class="nav-primary" id="last-itens">
-            <li>            
-              <a href="aluno/logout">
-                <span class="dot"></span> 
-                Logout
+
+          <ul class="nav-primary" id="last-itens">
+            <li>
+              <a href="/aluno/logout">
+                <img src="/images/icons/sair.png" class="icones">
+                Sair
               </a>
-            </li> 
+            </li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
-</div>
-<div class="page-header-mobile">
-  <img class="logo" src="/images/logo-ductu.png" alt=" " />
-
-  <button class="trigger-nav-container" data-trigger-nav="navOne">
-    <img src="/images/icons/burger-icon.png" id="icone-menu">
-  </button>
-
-  <button id="icone-pesquisa"> <img src="/images/icons/pesquisa.png" style="" alt=""></button>
-
-  <% if (locals.notificacoes.lenght > 0) { %>
-  <button id="icone-notificacao" onclick="location.href='notificacoes.html';">
-      <img src="/images/icons/notificacao.png">
-  </button>
-  <% } %>
 </div>

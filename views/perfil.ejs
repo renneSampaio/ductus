@@ -1,0 +1,17 @@
+<h3 id="h3_prof_favoritados">Professores Favoritos</h3>
+  <div id="carousel">
+    <% favoritos.forEach( (docente) => { %>
+        <%- include('./partials/card_favorito.ejs', {docente}) %>
+    <% }); %>
+  </div>
+  <div id="minhas_solicitacoes">
+    <h4>Minhas Solicitações</h4>
+    <ul>
+      <% solicitacoes.forEach( (data) => { %>
+        <li>
+            <%- include('./partials/solicitacao.ejs', {solicitacao:data.solicitacao, docente: data.docente}) %>
+        </li>
+        <div class="linha_cinza"></div>  
+      <% }); %>
+    </ul>
+  </div>
