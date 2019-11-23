@@ -10,18 +10,36 @@ const Docente = require('../models/Docente')
 const Curso = require('../models/Curso')
 const Favorito = require('../models/Favorito')
 
-router.get('/dashboard', ensureAuthenticated, async (req, res) => {
+router.get('/perfil', ensureAuthenticated, async (req, res) => {
 
     const solicitacoes_query = Solicitacao.find({aluno: req.user._id})
     const solicitacoes = await solicitacoes_query.exec();
 
+    const solicitacoes_data = []
+    for(let i = 0; i < solicitacoes.length; i++) {
+        const docente_query = Docente.findOne({id_lattes: solicitacoes[i].id_lattes});
+        const docente = await docente_query.exec();
+
+        solicitacoes_data.push({solicitacao: solicitacoes[i], docente: docente});
+    }
+
     const favoritos_query = Favorito.find({aluno: req.user._id});
     const favoritos = await favoritos_query.exec();
 
-    res.render('index', {
+    const docentes = []
+    for(let i = 0; i < favoritos.length; i++) {
+        const docente_query = Docente.findOne({id_lattes: favoritos[i].id_lattes});
+        const docente = await docente_query.exec();
+
+        docentes.push(docente);
+    }
+
+    console.log(docentes);
+
+    res.render('perfil', {
         user: req.user,
-        solicitacoes: solicitacoes,
-        favoritos: favoritos,
+        solicitacoes: solicitacoes_data,
+        favoritos: docentes,
     });
 });
 
