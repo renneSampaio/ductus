@@ -36,20 +36,39 @@
     <script src="/JQuery/jquery-3.2.1.min.js"></script>
     <script src="/JQuery/jquery-ui.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('.content').hide();
-
-            $('.subtitle').click(function () {
-                if ($(this).next().is(':visible')) {
-                    $(this).next('.content').hide(150);
-                } else {
-                    $('.content').hide(150);
-                    $(this).next('.content').show(150);
-                }
-            });
+    <script>    
+        $(document).ready(function(){
+          $('.content').hide();
+    
+          $('.subtitle').click(function(){
+            if($(this).next().is(':visible')){
+              $(this).next('.content').fadeOut(150);
+            } else{
+              $('.content').fadeOut(150);
+              $(this).next('.content').fadeIn(150);
+            } 
+          });
+    
+          $('.filtrado').hide();
+    
+          $('.filtro').click(function(){
+            $('.filtrado').fadeToggle(150);
+          });
+    
+          $('#caixa-pesquisa').hide();
+    
+          $('#icone-pesquisa').click(function(){
+            $('#caixa-pesquisa').fadeToggle(200);
+          });
+    
+          $('#btn_fechar').click(function(){
+            $('#caixa-pesquisa').fadeToggle(200);
+          });
+          $('#btn_voltar_pesquisa').click(function(){
+            $('#caixa-pesquisa').fadeToggle(200);
+          });
         });
-    </script>
+      </script>
 </head>
 
 <body>

@@ -1,23 +1,38 @@
 <div class="cards">
   <img src="<%= docente.image %>" class="image-responsive" onclick="location.href='/<%= docente.id_lattes %>';">
   <div class="card-content">
-    <div>
-      <form action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
-        <button type="submit">
-          <img class="favorito" src="images/icons/<%= (docente.favoritado)? 'favoritado': 'favoritar' %>.png">
-        </button>
+    
+    <div style="z-index: 1;" >
+      <img style="z-index: 1; position: relative;" class="favorito" onclick="document.getElementById('form_favoritar_<%= docente.id_lattes %>').submit(); console.log(src); let new_src = (src.includes('/images/icons/favoritar.png'))? '/images/icons/favoritado.png' : '/images/icons/favoritar.png'; $(this).attr('src', new_src )" src="images/icons/<%= (docente.favoritado)? 'favoritado': 'favoritar' %>.png">
+      <form id="form_favoritar_<%= docente.id_lattes %>" action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
       </form>
     </div>
+
     <h3 onclick="location.href='/<%= docente.id_lattes %>';"> <%= docente.nome %></h3>
-    <span class="dot" id="dot_disponivel_projetos"></span>
-    <span id="disponivel_projetos">
-      Disponível apenas para projetos.
-    </span>
+    <%if (docente.disponivel) {%>
+      <%if (docente.disponivel_tcc) {%>
+        <span class="dot" id="dot_disponivel"></span>
+        <span id="disponivel_projetos">
+            Disponível
+        </span>
+      <% } else {%>
+        <span class="dot" id="dot_disponivel_projetos"></span>
+        <span id="disponivel_projetos">
+            Disponível apenas para projetos.
+        </span>
+        <%}%>
+    <% } else {%>
+      <span class="dot" id="dot_indisponivel"></span>
+      <span id="disponivel_projetos">
+          Indisponível.
+      </span>
+    <%}%>
     <p onclick="location.href='/<%= docente.id_lattes %>';">
-      Professor Mestre do curso de Sistemas e Mídias Digitais.
+      <%= docente.apresentacao %>
     </p>
     <% docente.tags.forEach(tag => { %>
-      <span class="tag"> <%= tag %> </span>
+      <% tag = tag.replace(" ", '<span style="visibility: hidden;">_</span>');%>
+      <span class="tag"> <%- tag %> </span>
     <% }); %>
   </div>
 </div>

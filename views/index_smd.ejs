@@ -86,25 +86,106 @@
         </div>
       </div>
     </div>
-    <div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" hidden="">
-        <% docentes.filter(docente => docente.trilhas.includes('Audiovisual')).forEach(function(docente){ %>
-          <% include ./partials/card_docente %>
-        <% }); %>
-    </div>
 
+    <div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" hidden="">
+      <div id="ordenar">
+    
+        <div class="filtro">
+          <div id="icone-ordenar">
+            <img src="images/icons/ordenar.png">
+          </div>
+          <button id="filtrar_por">
+            Filtrar por:
+          </button>
+        </div>
+    
+        <div class="filtrado">
+          <button type="button" class="btn bg-green br-15">
+            Ordem Alfabetica
+          </button>
+          <button type="button" class="btn bg-green br-15">
+            Ordem de Disponibilidade
+          </button>
+        </div>
+      </div>
+      <% docentes.filter(docente => docente.trilhas.includes('Audiovisual')).forEach(function(docente){ %>
+        <% include ./partials/card_docente %>
+      <% }); %>
+    </div>
+    
     <div tabindex="0" role="tabpanel" id="tab-3" aria-labelledby="tab-3" tabindex="0" hidden="">
+      <div id="ordenar">
+    
+        <div class="filtro">
+          <div id="icone-ordenar">
+            <img src="images/icons/ordenar.png">
+          </div>
+          <button id="filtrar_por">
+            Filtrar por:
+          </button>
+        </div>
+    
+        <div class="filtrado">
+          <button type="button" class="btn bg-green br-15">
+            Ordem Alfabetica
+          </button>
+          <button type="button" class="btn bg-green br-15">
+            Ordem de Disponibilidade
+          </button>
+        </div>
+      </div>
       <% docentes.filter(docente => docente.trilhas.includes('Design')).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>
     </div>
-
+    
     <div tabindex="0" role="tabpanel" id="tab-4" aria-labelledby="tab-4" tabindex="0" hidden="">
+      <div id="ordenar">
+    
+        <div class="filtro">
+          <div id="icone-ordenar">
+            <img src="images/icons/ordenar.png">
+          </div>
+          <button id="filtrar_por">
+            Filtrar por:
+          </button>
+        </div>
+    
+        <div class="filtrado">
+          <button type="button" class="btn bg-green br-15">
+            Ordem Alfabetica
+          </button>
+          <button type="button" class="btn bg-green br-15">
+            Ordem de Disponibilidade
+          </button>
+        </div>
+      </div>
       <% docentes.filter(docente => docente.trilhas.includes('Sistemas')).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>
     </div>
-
+    
     <div tabindex="0" role="tabpanel" id="tab-5" aria-labelledby="tab-5" tabindex="0" hidden="">
+      <div id="ordenar">
+    
+        <div class="filtro">
+          <div id="icone-ordenar">
+            <img src="images/icons/ordenar.png">
+          </div>
+          <button id="filtrar_por">
+            Filtrar por:
+          </button>
+        </div>
+    
+        <div class="filtrado">
+          <button type="button" class="btn bg-green br-15">
+            Ordem Alfabetica
+          </button>
+          <button type="button" class="btn bg-green br-15">
+            Ordem de Disponibilidade
+          </button>
+        </div>
+      </div>
       <% docentes.filter(docente => docente.trilhas.includes('Jogos')).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>

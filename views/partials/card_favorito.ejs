@@ -4,7 +4,9 @@
             <h5>
                 <%= docente.nome %>
             </h5>
-            <img src="<%= docente.image %>" class="image-responsive">
+            <div class="container-image">
+                <img src="<%= docente.image %>">
+            </div>
             <div>
                 <form action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
                     <button id="btn_mensagem">

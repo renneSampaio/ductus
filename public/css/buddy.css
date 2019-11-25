@@ -466,6 +466,32 @@ img {
   left: 0;
   right: 0;
 }
+#caixa-pesquisa{
+   display: flex;
+   justify-content: space-between; 
+   position: absolute;
+   left: 0; 
+   right: 0; 
+   top: 0; 
+   height: 100%; 
+   background-color: #3B9479; 
+   z-index: 3;
+}
+#caixa-pesquisa form{
+   float: left; margin-top: auto; margin-bottom: auto;
+}
+#caixa-pesquisa form input{
+   width: 100%; height: 50px; text-align: left; background-color: #6DC5A8;
+}
+#btn_voltar_pesquisa{
+   width: 10%; height: 60%; float: left; margin-top: 4%; margin-bottom: 4%; margin-left:5%; margin-right: 5%;
+}
+#btn_fechar{
+   width: 10%; height: 60%; float: right; margin-top: 4%; margin-bottom: 4%; margin-left:5%; margin-right: 5%;
+}
+#btn_voltar_pesquisa img, #btn_fechar img{
+   margin-bottom: 20%; margin-top: 20%;
+}
 #submit_container{
    display: flex; 
    justify-content: space-between; 
@@ -493,6 +519,15 @@ img {
   border-width: 2px; 
   border-color: orange;
 }
+#btn_enviar_msg{
+  margin: 0;
+  padding: 0;
+  width: 65px;
+  height: 65px;
+   position: fixed; 
+   right: 5%; 
+   bottom: 5%;
+}
 #mensagem-orientacao{
   background-color: #E6E6E6;
   height: 150px;
@@ -519,6 +554,29 @@ img {
    margin-top: 5%; 
    font-weight: 600;
 }
+#icone-ordenar{
+  margin: 5%; 
+  margin-top: 2%;  
+  margin-bottom: 2%;
+  float: left;
+}
+#icone-ordenar img{
+   margin-top: 50%; 
+   margin-bottom: auto;
+}
+#ordenar{
+  display: flex;
+  width: 100%;
+  height: 80px;
+}
+#filtrar_por {
+  padding: 0;
+  margin-right: 0;
+  width: 100px;
+  text-align: left;
+  margin-bottom: auto; 
+  margin-top: 10%;
+}
 #titulo_solicita{
   text-align: center; 
   color: #6DC5A8; 
@@ -539,59 +597,6 @@ img {
 }
 
 /* ---------------------------------------------- */
-.radio-laranja {
-  margin-bottom: 5px;
-}
-.radio-laranja div{
-  display: flex;
-}
-.radio-laranja label {
-  margin-right: 15px;
-  line-height: 32px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.radio-laranja input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-
-  border: 2px solid #999;
-  transition: 0.2s all linear;
-  margin-right: 5px;
-
-  position: relative;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.radio-laranja input:checked {
-  border: 6px solid orange;
-}
-
-.radio-laranja button, legend {
-  color: white;
-  background-color: black;
-  padding: 5px 10px;
-  border-radius: 0;
-  border: 0;
-  font-size: 14px;
-}
-
-.radio-laranja button:hover,.radio-laranja button:focus {
-  color: #999;
-}
-
-.radio-laranja button:active {
-  background-color: white;
-  color: black;
-  outline: 1px solid black;
-}
 
 /*  -------------------------------------------*/
 
@@ -701,33 +706,37 @@ img {
   cursor: default;
 }
 #icone-menu{
-  width: 9vw;
-  height: auto;
+  padding: 1%;margin-left: 3%; float: left; width: 45px; height: 45px;
+}
 
-  text-align: center;
+#icone-menu img{
+  margin-left: 0;
+  margin-right: 0;
+}
+#icone-pesquisa{
+  margin-left: 10%;
+  margin-right: 0;
+}
+#icone-notificacao{
+  margin-left: 3%;
+  margin-right: 3%;
 }
 #icone-pesquisa, #icone-notificacao{
   background-color: transparent;
+  float: right;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  float: right;
 }
 
 #icone-pesquisa img{
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 7vw;
-  height: auto;
-  margin-top: 3vh;
-  margin-right: 15vw;
+  margin: 0;
+  padding: 0;
 }
 #icone-notificacao img{
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 3vh;
-  margin-right: 4vw;
-  width: 7vw;
-  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 /* DISPONIBILIDADE BOLINHAS E IDS PROFESSORES  */
@@ -881,12 +890,104 @@ background-color: transparent;
   margin-bottom: auto;
   margin-right: 2%;
 }
+.radio-laranja {
+  margin-bottom: 5px;
+}
+.radio-laranja div{
+  display: flex;
+}
+.radio-laranja label {
+  margin-right: 15px;
+  line-height: 32px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.radio-laranja input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.radio-laranja input:checked {
+  border: 6px solid orange;
+}
+
+.radio-laranja button, legend {
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+.radio-laranja button:hover,.radio-laranja button:focus {
+  color: #999;
+}
+
+.radio-laranja button:active {
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
+}
+
+.logo{
+  text-align: center;
+  width: 130px;
+  margin: auto;
+  margin-left: 15%;
+}
+.logo img{
+  margin: 0;
+  padding: 0;
+}
+.page-header-mobile button, .page-header-mobile div{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.filtrado{
+  width: 60%;
+}
+
+.filtrado button{
+  padding: 0;
+  margin-right: 0;
+  width: 80%;
+  height: auto;
+  border: solid;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-width: 1px;
+  border-color: #707070;
+  text-align: center;
+
+  float: left;
+  margin: 2%; 
+  margin-left: 0; 
+  color: #707070; 
+  font-weight: 500;
+}
+.filtro{
+   width: 40%; height: 80px; 
+}
 .container-image{
-  height: 105px; width: 100px; margin: auto;
+  height: 105px; width: 100px;
 }
 .container-image img {
   border-radius: 10px;
-  object-fit: contain;
 }
 .btn_solicita{
   width: 40px; 
@@ -998,15 +1099,9 @@ background-color: transparent;
   width: 100vw;
   height: 20vh;
 }
-.logo{
-  width: 30vw;
-  height: auto;
-  text-align: center;
-  margin-top: 0vh;
-}
 .curso-nome{
   text-align: left;
-  margin-left: 5%;
+  margin-left: 8%;
   margin-top: 1rem;
   padding-top: 1rem;
   padding-bottom: 5rem;
@@ -1038,10 +1133,7 @@ background-color: transparent;
   color: #707070;
   margin-left: 2%;
 }
-.lista-notifica li{/*
-  border-bottom: solid;
-  border-width: 2px;
-  border-color: #F5F5F5; */
+.lista-notifica li{
   
   width: 100vw;
   
@@ -1116,6 +1208,8 @@ background-color: transparent;
 }
 .card-content p{
   margin-bottom: 2%;
+  overflow: hidden;
+  height: 150px;
 }
 
 .image-responsive{
@@ -1138,14 +1232,11 @@ background-color: transparent;
   z-index: 1;
 }
 .box-nav{
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  height: 80%;
+  height: 70%;
   border-top: solid; 
   border-width: 1px; 
   border-color: white; 
-  margin-top: 1rem;
+  margin-top: 0;
   background-color: #F5F5F5;
   
 }
@@ -1210,7 +1301,6 @@ background-color: transparent;
     .box-message.bg-main-color a, .box-message.bg-main-color h1, .box-message.bg-main-color h2, .box-message.bg-main-color h3, .box-message.bg-main-color h4, .box-message.bg-main-color h5, .box-message.bg-main-color h6 {
       color: #ffffff; }
   .box-message.bg-green {
-    background-color: #dff0d8;
     color: #3c763d; }
     .box-message.bg-green a, .box-message.bg-green h1, .box-message.bg-green h2, .box-message.bg-green h3, .box-message.bg-green h4, .box-message.bg-green h5, .box-message.bg-green h6 {
       color: #3c763d; }
@@ -1839,7 +1929,7 @@ background-color: transparent;
   .btn.bg-red:hover, .btn.bg-red:focus {
     background-color: #a02622; }
   .btn.bg-green:hover, .btn.bg-green:focus {
-    background-color: #357935; }
+    background-color: #90EE90; }
   .btn.bg-yellow:hover, .btn.bg-yellow:focus {
     background-color: #c77c11; }
   .btn.bg-gray-darkest:hover, .btn.bg-gray-darkest:focus {
@@ -2087,8 +2177,8 @@ background-color: transparent;
 .bg-gray-lightest {
   background-color: #eeeeee; }
 
-.bg-green {
-  background-color: #5cb85c; }
+/*.bg-green {
+  background-color: #5cb85c; }*/
 
 .bg-blue {
   background-color: #5bc0de; }
@@ -4609,21 +4699,29 @@ h6 {
   box-shadow: none !important; }
   .page-header.bottom-bar-mobile + .page-header-mobile .page-logo-white {
     display: inline-block; }
+#page_header{
+  padding-top: 5%; 
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5%;
+
+}
 
 .page-header-mobile {
-  display: none;
-  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
   z-index: 2;
   box-shadow: -2px 0px 10px -3px rgba(0, 0, 0, 0.2); }
   .page-header-mobile .page-logo-color img, .page-header-mobile .page-logo-white img {
     width: 100px;
     height: auto; }
-  @media (max-width: 1024px) {
+  @media (max-width: 2000px) {
     .page-header-mobile {
       display: block;
       background-color: #3B9479;
       position: fixed;
-      height: 12vh;
+      height: 80px;
       top: 0;
       left: 0;
       right: 0; } }
@@ -4631,9 +4729,6 @@ h6 {
 .trigger-nav-container {
   display: none;
   width: 50px;
-  position: absolute;
-  top: 1.2rem;
-  left: 0;
   background-color: transparent;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -4653,8 +4748,7 @@ h6 {
     text-transform: uppercase;
     display: inline-block;
     font-size: 2rem;
-    letter-spacing: 1px;
-    margin-left: 0.5rem; }
+    letter-spacing: 1px; }
   .trigger-nav-container .icon-burger {
     position: relative;
     width: 25px;

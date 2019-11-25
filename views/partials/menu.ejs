@@ -3,6 +3,49 @@
 <% } else {%>
   <% include ./menu_logado %>
 <% } %>
+
+<div class="page-header-mobile">
+  <div  id="page_header">
+    <button id="icone-menu" class="trigger-nav-container" data-trigger-nav="navOne">
+      <img src="/images/icons/burger-icon.png">
+    </button>
+
+    <div class="logo">
+      <img onclick="location.href='index.html'" src="/images/logo-ductus.png"  alt=" " />
+    </div>
+
+    <button id="icone-pesquisa" > 
+      <img src="/images/icons/pesquisa.png">
+    </button>
+
+    <button id="icone-notificacao" onclick="location.href='/aluno/notificacoes';"> 
+      <img src="/images/icons/notificacao.png">
+    </button>
+
+    <div id="caixa-pesquisa">
+      <div id="btn_voltar_pesquisa">
+        <img src="/images/icons/arrow-thin-left-white.png">
+      </div>
+      
+      <form>
+        <input type="search" name="pesquisa">
+      </form>
+      <div id="btn_fechar">
+        <img src="/images/icons/fechar.png">
+      </div>
+    </div>
+  </div>
+  <% if (typeof pag != 'undefined')  { %>
+    <div class="box-nav">
+      <a href="javascript:void(0)" onClick="history.go(-1); return false;">
+        <img src="/images/arrow-thin-left.png" class="icon-nav">
+      </a>
+        <h3><%= pag %></h3> 
+      </div>
+    <% } %>
+</div>
+
+<!-- 
 <div class="page-header-mobile">
   <img class="logo" src="/images/logo-ductu.png"  alt=" " />
 
@@ -22,3 +65,4 @@
     </div>
   <% } %>
 </div>
+ -->
