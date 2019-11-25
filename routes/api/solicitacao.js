@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const {ensureAuthenticated} = require('../../config/auth');
 
+const Aluno = require('../../models/Aluno')
 const Docente = require('../../models/Docente')
 const Solicitacao = require('../../models/Solicitacao')
 const Notificacao = require('../../models/Notificacao')
@@ -44,56 +46,78 @@ let transporter = nodemailer.createTransport({
     auth: require('../../config/nodemailer_auth').auth,
 });
 
+router.get('/solicitacao/:id_lattes', ensureAuthenticated, async (req, res) => {
+
+    const docente_query = Docente.findOne({ id_lattes: req.params.id_lattes });
+    const docente = await docente_query.exec();
+
+    res.render('enviar_mensagem', {user: req.user, docente: docente})
+});
+
 router.post('/solicitacao/:id_lattes', (req, res) => {
 
     const aluno = req.user._id;
     const id_lattes = req.params.id_lattes;
+    const {tipo, mensagem} = req.body;
 
-    Solicitacao
-        .findOne(
-            {
-                id_lattes: req.params.id_lattes,
-                aluno: aluno
+    const solic = new Solicitacao({
+        id_lattes,
+        aluno,
+        mensagem,
+        tipo
+    })
+
+    solic.save().then(solic => {
+        const email_mockup = `
+            <p>${solic.mensagem}</p>
+            <a href='http://localhost:5000/api/solicitacao/resposta/${solic._id}'>Responder</a>
+        `;
+
+        transporter.sendMail({
+            from: 'rennesampaio97@gmail.com',
+            to: 'rennesampaio97@gmail.com',
+            subject: "teste",
+            html: email_mockup
+        }, (err, data) => {
+            if (err) {
+                console.log(err);
+                res.send("Falha ao enviar pedido. Tente novamente");
             }
-        ).then(solicitacao => {
-            if (solicitacao) {
-                console.log('solicitacao já realizada');
-                res.send(204);
-                return;
-            }
+        })
 
-            const solic = new Solicitacao({
-                id_lattes,
-                aluno,
-            })
+        console.log(`Solicitado ${req.params.id_lattes}`);
+        res.sendStatus(204);
 
-            solic.save().then(solic => {
-                const email_mockup = `
-                <ul>
-                    <li>
-                        <a href='http://localhost:5000/api/solicitacao/aceitar/${solic._id}'>Aceitar</a>
-                    </li>
-                    <li>
-                        <a href='http://localhost:5000/api/solicitacao/recusar/${solic._id}'>Recusar</a>
-                    </li>
-                </ul>`;
+    });
+});
 
-                transporter.sendMail({
-                    from: 'rennesampaio97@gmail.com',
-                    to: 'rennesampaio97@gmail.com',
-                    subject: "teste",
-                    html: email_mockup
-                }, (err, data) => {
-                    if (err) {
-                        console.log(err);
-                        res.send("Falha ao enviar pedido. Tente novamente");
-                    }
-                })
+router.get('/solicitacao/resposta/:id', async (req, res) => {
 
-                console.log(`Solicitado ${req.params.id_lattes}`);
-                res.sendStatus(204);
-            });
-        });
+    const solicitacao_query = Solicitacao.findOne({ _id: req.params.id });
+    const solicitacao = await solicitacao_query.exec();
+
+    const docente_query = Docente.findOne({ id_lattes: solicitacao.id_lattes });
+    const docente = await docente_query.exec();
+
+    const aluno_query = Aluno.findOne({ _id: solicitacao.aluno });
+    const aluno = await aluno_query.exec();
+
+    res.render('enviar_resposta', {aluno:aluno, docente, solicitacao});
+});
+
+router.post('/solicitacao/resposta/:id', async (req, res) => {
+
+    const {resposta} = req.body;
+
+    const solic_query = Solicitacao.findOne({_id:req.params.id});
+    const solic = await solic_query.exec();
+
+
+    solic.resposta = resposta;
+
+    solic.save();
+
+    res.send(solic);
 });
 
 router.get('/solicitacao/aceitar/:id', (req, res) => {

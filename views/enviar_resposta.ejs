@@ -1,0 +1,24 @@
+<h3 id="titulo_solicita">
+    Para: <%= aluno.name %>.
+</h3>
+
+<form id="msg_solicitar" action="/api/solicitacao/resposta/<%= solicitacao._id %>" method="POST">
+
+    <p>
+        <%= solicitacao.mensagem %>
+    </p>
+
+    <h4>Resposta:</h4>
+    <textarea maxlength="4000" id="mensagem-orientacao" type="text" name="resposta"
+        placeholder="Insira aqui sua resposta"></textarea>
+    <div id="submit_container">
+        <button id="btn_cancelar" type="reset" name="cancela" value="cancel"
+            onClick="document.getElementById('msg_solicitar').reset(); history.go(-1); return false;">
+            Cancelar
+        </button>
+        <button id="btn_enviar" type="submit" name="envio" value="send">
+            Enviar
+        </button>
+    </div>
+</form>
+<div id="pageNavOverlay"></div>

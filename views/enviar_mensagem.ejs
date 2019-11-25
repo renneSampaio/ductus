@@ -1,0 +1,33 @@
+<h3 id="titulo_solicita">
+    Docente: <%= docente.nome %>.
+</h3>
+
+<form id="msg_solicitar" action="/api/solicitacao/<%= docente.id_lattes %>" method="POST">
+    <h4>Tipo de orientação: </h4>
+
+    <div class="radio-laranja">
+        <div>
+            <input type="radio" name="tipo" <%= (docente.disponivel_tcc)? 'checked': 'disabled' %> value="tcc">
+            <label for="trabalhoEscolha1">Trabalho de conclusão de curso</label>
+        </div>
+        <div>
+            <input type="radio" name="tipo" <%= (!docente.disponivel_tcc)? 'checked': '' %> value="projeto">
+            <label for="trabalhoEscolha2">Outros projetos</label>
+        </div>
+    </div>
+
+    <h4>Mensagem:</h4>
+    <textarea maxlength="4000" id="mensagem-orientacao" type="text" name="mensagem"
+        placeholder="Insira aqui seu pedido (Ex: ideia, apresentação, projetos, etc.)"></textarea>
+
+    <div id="submit_container">
+        <button id="btn_cancelar" type="reset" name="cancela" value="cancel"
+            onClick="document.getElementById('msg_solicitar').reset(); history.go(-1); return false;">
+            Cancelar
+        </button>
+        <button id="btn_enviar" type="submit" name="envio" value="send">
+            Enviar
+        </button>
+    </div>
+</form>
+<div id="pageNavOverlay"></div>
