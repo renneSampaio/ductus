@@ -22,6 +22,16 @@ const DocenteSchema = new mongoose.Schema({
         type: String,
         default: '',
     },
+    disponivel: {
+        type: Boolean,
+        default: true,
+        required: true,
+    },
+    disponivel_tcc: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
     image: {
         type: String,
         default: '',
