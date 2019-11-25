@@ -50,8 +50,9 @@ router.get('/perfil/:pag', ensureAuthenticated, async (req, res) => {
 router.get('/login', (req, res) => { 
     if (req.isAuthenticated()) {
             res.redirect('/');
+    } else {
+        res.render('login', {user: req.user, login: true})
     }
-    res.render('login', {user: req.user, login: true})
 });
 
 //Register page
