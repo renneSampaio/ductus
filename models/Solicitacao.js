@@ -21,13 +21,8 @@ const SolicitacaoSchema = new mongoose.Schema({
     },
     resposta: {
         type: String,
-        default: "",
-        required: true
-    },
-    aceito: {
-        type: Boolean,
-        default: false,
-        required: true,
+        default:  '',
+        required: false
     },
     tipo: {
         type: String,
