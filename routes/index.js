@@ -18,13 +18,17 @@ router.get('/index_smd', (req, res) => {
 
     Docente.find({})
         .then(async (docentes) => {
-
             for (let i = 0; i < docentes.length; i++) {
                 docentes[i].favoritado = false;
                 if (req.isAuthenticated()) {
                     const favorito_query = Favorito.exists({id_lattes: docentes[i].id_lattes, aluno: req.user._id});
                     docentes[i].favoritado = await favorito_query;
                 }
+
+                const curriculo_query = Curriculo.findOne({ id_lattes: docentes[i].id_lattes });
+                const curriculo = await curriculo_query.exec();
+
+                docentes[i].apresentacao = curriculo.apresentacao;
             }
 
             res.render('index_smd', {
