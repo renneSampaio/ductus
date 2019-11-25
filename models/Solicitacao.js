@@ -9,9 +9,19 @@ const SolicitacaoSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         required: true
     },
+    mensagem: {
+        type: String,
+        default: "",
+        required: true
+    },
     respondido: {
-        type: Boolean, 
+        type: Boolean,
         default: false,
+        required: true
+    },
+    resposta: {
+        type: String,
+        default: "",
         required: true
     },
     aceito: {
