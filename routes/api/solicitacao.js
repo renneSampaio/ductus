@@ -96,6 +96,11 @@ router.get('/solicitacao/resposta/:id', async (req, res) => {
     const solicitacao_query = Solicitacao.findOne({ _id: req.params.id });
     const solicitacao = await solicitacao_query.exec();
 
+    if (solicitacao.respondido) {
+        res.send('Solicitacao já respondida');
+        return;
+    }
+
     const docente_query = Docente.findOne({ id_lattes: solicitacao.id_lattes });
     const docente = await docente_query.exec();
 
@@ -112,10 +117,31 @@ router.post('/solicitacao/resposta/:id', async (req, res) => {
     const solic_query = Solicitacao.findOne({_id:req.params.id});
     const solic = await solic_query.exec();
 
+    if (solic.respondido) {
+        res.send('Solicitacao já respondida');
+        return;
+    }
+
+    const docente_query = Docente.findOne({id_lattes: solic.id_lattes});
+    const docente = await docente_query.exec();
 
     solic.resposta = resposta;
+    solic.respondido = true;
 
     solic.save();
+
+    const notificacao = new Notificacao(
+        {
+            aluno: solic.aluno,
+            texto: `${docente.nome} respondeu sua mensagem.`,
+            lido: false
+        }
+    );
+
+    notificacao.save().then( notificacao => {
+        console.log(notificacao.texto);
+        res.send(notificacao.texto);
+    });
 
     res.send(solic);
 });
