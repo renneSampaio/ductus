@@ -35,8 +35,6 @@ router.get('/perfil/:pag', ensureAuthenticated, async (req, res) => {
         docentes.push(docente);
     }
 
-    console.log(docentes);
-
     res.render('perfil', {
         user: req.user,
         solicitacoes: solicitacoes_data,
