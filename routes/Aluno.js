@@ -199,7 +199,7 @@ router.get('/notificacoes', ensureAuthenticated, async (req, res) => {
 
     console.log(notificacoes)
 
-    res.render('notificacoes', {user: req.user, notificacoes: notificacoes})
+    res.render('notificacoes', {user: req.user, notificacoes: notificacoes, pag: "Notificações"})
 });
 
 module.exports = router;
