@@ -18,6 +18,10 @@ const DocenteSchema = new mongoose.Schema({
         type: [],
         default: '',
     },
+    tags: {
+        type: [],
+        default: '',
+    },
     email: {
         type: String,
         default: '',

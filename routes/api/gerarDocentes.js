@@ -25,9 +25,10 @@ router.get('/atualizarDados', (req, res) => {
         const img = docente_info[2];
         const email = docente_info[3];
         const trilhas = docente_info[4];
+        const tags = [docente_info[5], docente_info[6], docente_info[7], docente_info[8]];
 
         const json = lerCurriculo(id_lattes);
-        gerarDocente(id_lattes, json, img, email, trilhas);
+        gerarDocente(id_lattes, json, img, email, trilhas, tags);
         gerarCurriculo(id_lattes, json);
     })
 
@@ -50,7 +51,7 @@ function lerCurriculo(id) {
     }
 }
 
-function gerarDocente(id_lattes, json, image, email, trilhas_string) {
+function gerarDocente(id_lattes, json, image, email, trilhas_string, tags) {
     let nome = json['DADOS-GERAIS']['@_NOME-COMPLETO'];
     let curso = 'Sistemas e Mídias Digitais'
 
@@ -60,6 +61,9 @@ function gerarDocente(id_lattes, json, image, email, trilhas_string) {
         nome,
         curso,
         trilhas,
+        tags,
+        disponivel: true,
+        disponivel_tcc: true,
         email,
         image
     }, { upsert: true }, doc => {});

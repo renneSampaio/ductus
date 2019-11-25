@@ -16,8 +16,8 @@
     <p onclick="location.href='/<%= docente.id_lattes %>';">
       Professor Mestre do curso de Sistemas e Mídias Digitais.
     </p>
-    <span class="tag"> Animação </span>
-    <span class="tag"> Ilustração </span>
-    <span class="tag"> Design<span style="visibility: hidden;">_</span>Gráfico</span>
+    <% docente.tags.forEach(tag => { %>
+      <span class="tag"> <%= tag %> </span>
+    <% }); %>
   </div>
 </div>
