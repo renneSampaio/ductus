@@ -1,4 +1,4 @@
-<% if (user === undefined) {%>
+<% if (typeof user === 'undefined') {%>
   <% include ./menu_visitante %>
 <% } else {%>
   <% include ./menu_logado %>
