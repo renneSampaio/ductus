@@ -6,28 +6,50 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
     <!-- Go to  http://realfavicongenerator.net/ to get your own favicon readable on all platforms -->
-  
+
     <meta name="author" content="Loïc Sciampagna">
     <meta name="description" content="CSS framework for people who are not afraid of coding.">
-  
-    <meta property="og:url"                content="https://buddycss.com" />
-    <meta property="og:type"               content="Website" />
-    <meta property="og:title"              content="BuddyCSS" />
-    <meta property="og:description"        content="BuddyCSS is a CSS framework for people who love coding." />
-    <meta property="og:image"              content="https://buddycss.com/images/sharer-1.jpg" />
-  
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,600,700,800,900,300italic,600italic' rel='stylesheet' type='text/css'>
+
+    <meta property="og:url" content="https://buddycss.com" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="BuddyCSS" />
+    <meta property="og:description" content="BuddyCSS is a CSS framework for people who love coding." />
+    <meta property="og:image" content="https://buddycss.com/images/sharer-1.jpg" />
+
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,600,700,800,900,300italic,600italic' rel='stylesheet'
+        type='text/css'>
     <link rel="stylesheet" type="text/css" href="/css/buddy.plugins.min.css">
     <link rel="stylesheet" type="text/css" href="/css/buddy.css">
 
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,600,700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/js/buddy.min.js"></script>
-  
+
     <!-- ICONES FONTAWESOME -->
     <script src="https://kit.fontawesome.com/fe18477891.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.min.css">
+
+    <script src="/JQuery/jquery-3.2.1.min.js"></script>
+    <script src="/JQuery/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.content').hide();
+
+            $('.subtitle').click(function () {
+                if ($(this).next().is(':visible')) {
+                    $(this).next('.content').hide(150);
+                } else {
+                    $('.content').hide(150);
+                    $(this).next('.content').show(150);
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>

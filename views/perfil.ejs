@@ -1,17 +1,35 @@
-<h3 id="h3_prof_favoritados">Professores Favoritos</h3>
+<% if (pag_favoritos) { %>
+  <h4 style="margin-top: 25vh;">
+    Professores Favoritos
+  </h4>
+  <div class="linha"></div>
   <div id="carousel">
     <% favoritos.forEach( (docente) => { %>
-        <%- include('./partials/card_favorito.ejs', {docente}) %>
+    <%- include('./partials/card_favorito.ejs', {docente}) %>
     <% }); %>
   </div>
-  <div id="minhas_solicitacoes">
+
+  <h4>Minhas Solicitações</h4>
+  <div class="linha"></div>
+  <% solicitacoes.forEach( (data) => { %>
+  <%- include('./partials/solicitacao.ejs', {solicitacao:data.solicitacao, docente: data.docente}) %>
+  <% }); %>
+<% } else { %>
+<h4 style="margin-top: 25vh;">
     <h4>Minhas Solicitações</h4>
-    <ul>
-      <% solicitacoes.forEach( (data) => { %>
-        <li>
-            <%- include('./partials/solicitacao.ejs', {solicitacao:data.solicitacao, docente: data.docente}) %>
-        </li>
-        <div class="linha_cinza"></div>  
-      <% }); %>
-    </ul>
-  </div>
+    <div class="linha"></div>
+    <% solicitacoes.forEach( (data) => { %>
+    <%- include('./partials/solicitacao.ejs', {solicitacao:data.solicitacao, docente: data.docente}) %>
+    <% }); %>
+  <h4 style="margin-top: 10vh;">
+    Professores Favoritos
+  </h4>
+  <div class="linha"></div>
+  <div id="carousel">
+    <% favoritos.forEach( (docente) => { %>
+    <%- include('./partials/card_favorito.ejs', {docente}) %>
+    <% }); %>
+</div>
+
+<% } %>
+<div id="pageNavOverlay"></div>

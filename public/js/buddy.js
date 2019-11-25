@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
       triggerNavContainer = document.querySelectorAll('[data-trigger-nav]'),
       triggerSubNavPrimary = document.querySelectorAll('.has-sub-level'),
       navPrimaryLI = document.querySelectorAll('.nav-primary > li');
-
   //toggle the left navbar
   var toggleNav = function toggleNav(event) {
     event.preventDefault();

@@ -1,10 +1,26 @@
-<a>
+<!-- <a>
     <img src="/images/icons/solicitacao.png">
     <% if (!solicitacao.respondido) { %>
-        <%= docente.nome %>: <span style="font-weight: bold">Pendente</span>
+    <%= docente.nome %>: <span style="font-weight: bold">Pendente</span>
     <% } else if (solicitacao.aceito) { %>
-        <%= docente.nome %>: <span style="font-weight: bold">Aceita</span>
+    <%= docente.nome %>: <span style="font-weight: bold">Aceita</span>
     <% } else { %>
-        <%= docente.nome %>: <span style="font-weight: bold">Recusada</span>
+    <%= docente.nome %>: <span style="font-weight: bold">Recusada</span>
     <% } %>
-</a>
+</a> -->
+
+<div id="solicit-perfil" class="lista_tcc">
+    <div class="subtitle">
+        <img src="/images/icons/solicitacao.png" class="btn_solicita">
+        <h5> <%= docente.nome %>: </h5>
+        <img class="arrow_down" src="/images/icons/arrow-down.png">
+    </div>
+    <div class="content">
+        <p>
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua.
+        </p>
+    </div>
+</div>

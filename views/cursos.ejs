@@ -3,14 +3,30 @@
       
     </div>
   
-    <ul role="tablist" class="tabs" arial-label="tabs-description">
+    <ul role="tablist" class="tabs" arial-label="tabs-description" style="display: flex; justify-content: space-between;">
       <li>
-        <button role="tab" aria-selected="true" aria-controls="tab-1">Benfica</button>
-        <div tabindex="0" role="tabpanel" id="tab-1" aria-labelledby="tab-1" tabindex="0">
+        <button role="tab" aria-selected="true" aria-controls="tab-1">Benfica</button>      
+      </li>
+      
+      <li>
+        <button role="tab" aria-selected="false" aria-controls="tab-2">Labomar</button>      
+      </li>
+  
+      <li>
+        <button role="tab" aria-selected="false" aria-controls="tab-3">Pici</button>      
+      </li>
+  
+      <li>
+        <button role="tab" aria-selected="false" aria-controls="tab-4">Porangabuçu</button>      
+      </li>
+    </ul>
+  
+  <div>
+    <div tabindex="0" role="tabpanel" id="tab-1" aria-labelledby="tab-1" tabindex="0">
           <ul class="nav-cursos">
               <li>
                 <div class="curso-nome">
-                   <img src="images/icons/cursos.png" style="" alt="">
+                   <img src="/images/icons/cursos_icon.png" style="" alt="">
                   <div class="curso-div">
                     <h5>  Administração </h5>
                     <h6>  Bacharelado   </h6>
@@ -19,7 +35,7 @@
               </li>
               <li>
                 <div class="curso-nome">
-                  <img src="images/icons/cursos.png">
+                  <img src="/images/icons/cursos_icon.png">
                   <div class="curso-div">
                     <h5>  Biblioteconomia </h5>
                     <h6>  Bacharelado     </h6>
@@ -28,14 +44,11 @@
               </li>
             </ul>
         </div>
-      </li>
-      <li>
-        <button role="tab" aria-selected="false" aria-controls="tab-2">Labomar</button>
         <div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" hidden="">
             <ul class="nav-cursos">
               <li>
                 <div class="curso-nome">
-                   <img src="images/icons/cursos.png" style="" alt="">
+                   <img src="/images/icons/cursos_icon.png" style="" alt="">
                   <div class="curso-div">
                     <h5>  Ciências Ambientais </h5>
                     <h6>  Bacharelado         </h6>
@@ -44,7 +57,7 @@
               </li>
               <li>
                 <div class="curso-nome">
-                  <img src="images/icons/cursos.png">
+                  <img src="/images/icons/cursos_icon.png">
                   <div class="curso-div">
                     <h5>  Oceanografia    </h5>
                     <h6>  Bacharelado     </h6>
@@ -53,16 +66,12 @@
               </li>
             </ul>
         </div>
-      </li>
-  
-      <li>
-        <button role="tab" aria-selected="false" aria-controls="tab-3">Pici</button>
         <div tabindex="0" role="tabpanel" id="tab-3" aria-labelledby="tab-3" tabindex="0" hidden="">        
          <ul class="nav-cursos">
               <li>
                 <div class="curso-nome">
-                   <img src="images/icons/cursos.png" style="" alt="">
-                  <div class="curso-div" onclick="location.href='index_smd';">
+                   <img src="/images/icons/cursos_icon.png" style="" alt="">
+                  <div class="curso-div" onclick="location.href='/index_smd';">
                     <h5>  Sistemas e Mídias Digitais </h5>
                     <h6>  Bacharelado                </h6>
                   </div>
@@ -70,7 +79,7 @@
               </li>
               <li>
                 <div class="curso-nome">
-                  <img src="images/icons/cursos.png">
+                  <img src="/images/icons/cursos_icon.png">
                   <div class="curso-div">
                     <h5>  Zootecnia   </h5>
                     <h6>  Bacharelado </h6>
@@ -79,15 +88,11 @@
               </li>
             </ul>
         </div>
-      </li>
-  
-      <li>
-        <button role="tab" aria-selected="false" aria-controls="tab-4">Porangabuçu</button>
         <div tabindex="0" role="tabpanel" id="tab-4" aria-labelledby="tab-4" tabindex="0" hidden="">        
           <ul class="nav-cursos">
               <li>
                 <div class="curso-nome">
-                   <img src="images/icons/cursos.png" style="" alt="">
+                   <img src="/images/icons/cursos_icon.png" style="" alt="">
                   <div class="curso-div">
                     <h5>  Farmácia     </h5>
                     <h6>  Bacharelado  </h6>
@@ -96,7 +101,7 @@
               </li>
               <li>
                 <div class="curso-nome">
-                  <img src="images/icons/cursos.png">
+                  <img src="/images/icons/cursos_icon.png">
                   <div class="curso-div">
                     <h5>  Medicina    </h5>
                     <h6>  Bacharelado </h6>
@@ -105,7 +110,6 @@
               </li>
             </ul>     
         </div> 
-      </li>
-    </ul>
+      </div>
   </div>
-  <div id="pageNavOverlay"></div> 
+    <div id="pageNavOverlay"></div> 
