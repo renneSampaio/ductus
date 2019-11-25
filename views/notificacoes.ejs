@@ -1,12 +1,13 @@
 <ul class="lista-notifica">
     <% notificacoes.forEach( notificacao => { %>
+    <div style="border-bottom: solid; border-width: 2px; border-color: #F5F5F5;">
         <li>
             <a>
                 <%= notificacao.texto %>
             </a>
-            <img src="./images/icons/solicitacao.png"class="icon-notifica">
+            <img src="/images/icons/solicitacao.png" class="icon-notifica">
         </li>
+    </div>
     <% }) %>
-  </ul>
-
-  <div id="pageNavOverlay"></div> 
+</ul>
+<div id="pageNavOverlay"></div>
