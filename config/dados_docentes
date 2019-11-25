@@ -1,9 +1,9 @@
 nome,id_lattes,foto,email,trilha,tag 1,tag 2,tag 3,tag 4
-Windson,1744732999336375,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4762853T2,windson@virtual.ufc.br,Sistemas,Computação Ubíqua,Acessibilidade,Engenharia de Software,Educação
-Gilvan,0022110232147076,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4764600A6,gilvanmaia@virtual.ufc.br,Sistemas | Jogos,Segurança da Informação,Realidade virtual ,Computação Gráfica,Game Engines
-Ismael,0552099245346620,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4730115Y5,ismael@virtual.ufc.br,Audiovisual,Educação,Fotografia,Cultura Digital,Produção Audiovisual
-Georgia,7282584890816961,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4230593Z0,georgia@virtual.ufc.br,Audiovisual,Narrativas Multimídia,Design,Gênero,Identidade
-Ticianne ,7388836998087457,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4231074D3,ticianne@virtual.ufc.br,Design,Design digital,Psicologia cognitiva,IHC,Acessibilidade
-Liandro,7248407498815333,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4212903D6,liandroroger@virtual.ufc.br,Design | Jogos,Ilustração,Design Gráfico,Animação,Concepção de personagens
-Glaudiney,7706674770409286,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4764608P5,glaudiney@virtual.ufc.br,Jogos,Narrativas Multimídia,Game Design,Mitologia,Psicologia analítica
-Alysson,8463540065575491,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4254124J3,alysson@virtual.ufc.br,Sistemas | Jogos,Realidade virtual ,Inteligência Computacional,Programação,Game Design
+Windson Viana,1744732999336375,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4762853T2,windson@virtual.ufc.br,Sistemas,Computação Ubíqua,Acessibilidade,Engenharia de Software,Educação
+Gilvan Maia,0022110232147076,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4764600A6,gilvanmaia@virtual.ufc.br,Sistemas | Jogos,Segurança da Informação,Realidade virtual ,Computação Gráfica,Game Engines
+Ismael Furtado,0552099245346620,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4730115Y5,ismael@virtual.ufc.br,Audiovisual,Educação,Fotografia,Cultura Digital,Produção Audiovisual
+Georgia Cruz,7282584890816961,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4230593Z0,georgia@virtual.ufc.br,Audiovisual,Narrativas Multimídia,Design,Gênero,Identidade
+Ticianne Darin,7388836998087457,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4231074D3,ticianne@virtual.ufc.br,Design,Design digital,Psicologia cognitiva,IHC,Acessibilidade
+Liandro Roger,7248407498815333,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4212903D6,liandroroger@virtual.ufc.br,Design | Jogos,Ilustração,Design Gráfico,Animação,Concepção de personagens
+Glaudiney Moreira,7706674770409286,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4764608P5,glaudiney@virtual.ufc.br,Jogos,Narrativas Multimídia,Game Design,Mitologia,Psicologia analítica
+Alysson Diniz,8463540065575491,http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4254124J3,alysson@virtual.ufc.br,Sistemas | Jogos,Realidade virtual ,Inteligência Computacional,Programação,Game Design

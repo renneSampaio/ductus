@@ -21,6 +21,7 @@ router.get('/atualizarDados', (req, res) => {
     docentes.reverse().pop();
     docentes.forEach(docente_string => {
         const docente_info = docente_string.split(',');
+        const nome = docente_info[0];
         const id_lattes = docente_info[1].replace(/['"]+/g, '');
         const img = docente_info[2];
         const email = docente_info[3];
@@ -28,7 +29,7 @@ router.get('/atualizarDados', (req, res) => {
         const tags = [docente_info[5], docente_info[6], docente_info[7], docente_info[8]];
 
         const json = lerCurriculo(id_lattes);
-        gerarDocente(id_lattes, json, img, email, trilhas, tags);
+        gerarDocente(nome,id_lattes, json, img, email, trilhas, tags);
         gerarCurriculo(id_lattes, json);
     })
 
@@ -51,14 +52,15 @@ function lerCurriculo(id) {
     }
 }
 
-function gerarDocente(id_lattes, json, image, email, trilhas_string, tags) {
-    let nome = json['DADOS-GERAIS']['@_NOME-COMPLETO'];
+function gerarDocente(nome, id_lattes, json, image, email, trilhas_string, tags) {
+    let nome_completo = json['DADOS-GERAIS']['@_NOME-COMPLETO'];
     let curso = 'Sistemas e Mídias Digitais'
 
     const trilhas = trilhas_string.split(" | ");
     Docente.findOneAndUpdate({ id_lattes: id_lattes },{
         id_lattes,
         nome,
+        nome_completo,
         curso,
         trilhas,
         tags,

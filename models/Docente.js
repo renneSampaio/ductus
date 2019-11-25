@@ -10,6 +10,10 @@ const DocenteSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    nome_completo: {
+        type: String,
+        required: true,
+    },
     curso: {
         type: String,
         required: true,
