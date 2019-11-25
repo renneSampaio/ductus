@@ -11,7 +11,7 @@ const Curso = require('../models/Curso')
 const Favorito = require('../models/Favorito')
 const Notificacao = require('../models/Notificacao')
 
-router.get('/perfil', ensureAuthenticated, async (req, res) => {
+router.get('/perfil/:pag', ensureAuthenticated, async (req, res) => {
 
     const solicitacoes_query = Solicitacao.find({aluno: req.user._id})
     const solicitacoes = await solicitacoes_query.exec();
@@ -41,6 +41,8 @@ router.get('/perfil', ensureAuthenticated, async (req, res) => {
         user: req.user,
         solicitacoes: solicitacoes_data,
         favoritos: docentes,
+        pag: "Perfil",
+        pag_favoritos: (req.params.pag == 'favoritos')
     });
 });
 
