@@ -34,7 +34,7 @@ router.get('/perfil/:pag', ensureAuthenticated, async (req, res) => {
 
         docentes.push(docente);
     }
-
+    
     res.render('perfil', {
         user: req.user,
         solicitacoes: solicitacoes_data,
@@ -170,13 +170,13 @@ router.get('/solicitacoes', (req, res) => {
     })
 });
 
-router.post('/favoritar/:id_lattes', (req, res) => {
+router.post('/favoritar/:id_lattes', ensureAuthenticated, (req, res) => {
     if (req.user == undefined) res.sendStatus(204);
     const id_lattes = req.params.id_lattes;
 
     Favorito.findOne({id_lattes, aluno: req.user.id}).then( favorito => {
         if (favorito) {
-            Favorito.remove({id_lattes}).exec();
+            Favorito.deleteOne({id_lattes, aluno: req.user._id}).exec();
         } else {
             const favorito = new Favorito({
                 id_lattes,
@@ -188,6 +188,7 @@ router.post('/favoritar/:id_lattes', (req, res) => {
     })
 
     console.log("Favoritado")
+    console.log(id_lattes);
 
     res.sendStatus(204);
 });
