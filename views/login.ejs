@@ -1,18 +1,31 @@
-<div class="tabs-wrapper" id="tabsWrapper">
-        <div id="fundo-wrapper">    
-          <ul role="tablist" class="tabs" arial-label="tabs-description">
+<div class="tabs-wrapper" id="tabsWrapper" style="margin-top: 15vh;">
+    <div id="fundo-wrapper">    
+          <ul role="tablist" class="tabs" arial-label="tabs-description" id="listas-tab-cadastro">
             <li id="cadastro">
-              <button role="tab" aria-selected="<%= !login %>" aria-controls="tab_01">
+              <button role="tab" aria-selected="<%= !login %>" aria-controls="tab_01" style="font-size: 17px;">
                 Cadastro
               </button>
-    
-              <div tabindex="0" role="tabpanel" id="tab_01" aria-labelledby="tab_01" tabindex="0"  hidden="">
-                <form style="margin-right: 10%;" action="/aluno/register" method="POST">
+              <div tabindex="0" role="tabpanel" id="tab_01" aria-labelledby="tab_01" tabindex="0"  <%= (login)? 'hidden=""':''%> >
+                <ul>
+
+                  <% if (typeof errors != 'undefined') { %>
+                  <% errors.forEach( error => { %>
+                    <li>
+                      <p>
+                        <h4>
+                          <%= error.msg %>
+                        </h4>
+                      </p>
+                      </li>
+                    <% }) %>
+                    <% } %>
+                  </ul>
+                <form class="form_registro" action="/aluno/register" method="POST">
                   Nome:
-                  <input type="text" name="name" required><br>
+                  <input type="text" name="name" value="<%= typeof name != 'undefined' ? name : '' %>" required><br>
                   
                   Curso:
-                  <select name="curso">
+                  <select name="curso" required>
                     <option selected disabled>Escolha um curso</option>
                     <option value="admin"> Administração</option>
                     <option value="biblio"> Biblioteconomia</option>
@@ -25,7 +38,7 @@
                   </select>
     
                   E-mail:
-                  <input type="text" name="email" required><br>
+                  <input type="text" name="email" value="<%= typeof email != 'undefined' ? email : '' %>"required><br>
     
                   Senha:
                   <input type="password" name="password" required><br>
@@ -33,23 +46,28 @@
                   Confirmar senha:
                   <input type="password" name="password2" required><br>
                   
-                  <input type="submit" value="Entrar" style=" width: 40%; font-size: 20px; font-weight: bold; margin-top: 20%; margin-left: 30%; margin-right: auto; margin-bottom: 5%; text-align: center;">
+                  <input type="submit" value="Cadastrar" id="btn_cadastrar">
                 </form>
               </div>
             </li>
     
             <li id="login">
-              <button role="tab" aria-selected="<%= login %>" aria-controls="tab_02">
+              <% if (cadastro_sucesso) { %>
+                <div class="popup" id="popupcadastro">
+                  <img src="/images/popup-cadastro.png">
+                </div>
+              <% } %>
+              <button role="tab" aria-selected="<%= login %>" aria-controls="tab_02" style="font-size: 17px;">
                 Login
               </button>
     
-              <div tabindex="0" role="tabpanel" id="tab_02" aria-labelledby="tab_02" tabindex="0">
-                <form style="margin-right: 10%;" action="/aluno/login" method="POST">
+              <div tabindex="0" role="tabpanel" id="tab_02" aria-labelledby="tab_02" tabindex="0" <%= (!login)? 'hidden=""':''%>>
+                <form class="form_registro" action="/aluno/login" method="POST">
                   E-mail:
-                  <input type="email" name="email"><br>
+                  <input type="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>" required><br>
                   Senha:
-                  <input type="password" name="password"><br>
-                  <input type="submit" value="Entrar" style=" width: 40%; font-size: 20px; font-weight: bold; margin-top: 20%; margin-left: 30%; margin-right: auto; margin-bottom: 5%; text-align: center;">
+                  <input type="password" name="password" required><br>
+                  <input type="submit" value="Entrar" id="btn_entrar">
                 </form>
               </div>
             </li>

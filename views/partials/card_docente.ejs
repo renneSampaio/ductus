@@ -1,9 +1,8 @@
 <div class="cards">
   <img src="<%= docente.image %>" class="image-responsive" onclick="location.href='/<%= docente.id_lattes %>';">
   <div class="card-content">
-    
     <div style="z-index: 1;" >
-      <img style="z-index: 1; position: relative;" class="favorito" onclick="document.getElementById('form_favoritar_<%= docente.id_lattes %>').submit(); console.log(src); let new_src = (src.includes('/images/icons/favoritar.png'))? '/images/icons/favoritado.png' : '/images/icons/favoritar.png'; $(this).attr('src', new_src )" src="images/icons/<%= (docente.favoritado)? 'favoritado': 'favoritar' %>.png">
+      <img style="z-index: 1; position: relative;" class="favorito" onclick="document.getElementById('form_favoritar_<%= docente.id_lattes %>').submit(); console.log(src); let new_src = (src.includes('/images/icons/favoritar.png'))? '/images/icons/favoritado.png' : '/images/icons/favoritar.png'; $(this).attr('src', new_src )" src="/images/icons/<%= (docente.favoritado)? 'favoritado': 'favoritar' %>.png">
       <form id="form_favoritar_<%= docente.id_lattes %>" action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
       </form>
     </div>
@@ -26,13 +25,25 @@
       <span id="disponivel_projetos">
           Indisponível.
       </span>
-    <%}%>
+      <%}%>
+      <br>
+      <div>
+
+        <% tag = docente.tags.split(',')[0].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+        <span class="tag"><%- tag %></span>
+        <% tag = docente.tags.split(',')[1].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+        <span class="tag"><%- tag %></span><br>
+      </div>
+      <div>
+
+        <% tag = docente.tags.split(',')[2].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+        <span class="tag"><%- tag %></span>
+        <% tag = docente.tags.split(',')[3].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+        <span class="tag"><%- tag %></span>
+      </div>
+
     <p onclick="location.href='/<%= docente.id_lattes %>';">
       <%= docente.apresentacao %>
     </p>
-    <% docente.tags.forEach(tag => { %>
-      <% tag = tag.replace(" ", '<span style="visibility: hidden;">_</span>');%>
-      <span class="tag"> <%- tag %> </span>
-    <% }); %>
-  </div>
+    </div>
 </div>

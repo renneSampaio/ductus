@@ -6,6 +6,10 @@ const CurriculoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    descricao: {
+        type: String,
+        required: true,
+    },
     apresentacao: {
         type: String,
         required: true,

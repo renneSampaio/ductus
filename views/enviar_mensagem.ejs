@@ -1,7 +1,11 @@
 <h3 id="titulo_solicita">
     Docente: <%= docente.nome %>.
 </h3>
-
+<% if (typeof solicit_sucesso != 'undefined') { %>
+<div class="popup" id="popupsolicita">
+    <img onclick="location.href='/<%= docente.id_lattes %>'"src="/images/popup-solicitacao.png">
+</div>
+<% } %>
 <form id="msg_solicitar" action="/api/solicitacao/<%= docente.id_lattes %>" method="POST">
     <h4>Tipo de orientação: </h4>
 

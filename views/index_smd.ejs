@@ -1,25 +1,25 @@
 <div class="tabs-wrapper" id="tabsWrapper">
-  <div id="fundo-wrapper"></div>
-  <ul role="tablist" class="tabs" arial-label="tabs-description" style="display: flex; justify-content: space-between;">
+  <!-- <div id="fundo-wrapper"></div> -->
+  <ul role="tablist" class="tabs" arial-label="tabs-description" id="listas-tab">
     <li>
-      <button role="tab" aria-selected="true" aria-controls="tab-1">Sobre</button>
+      <button role="tab" aria-selected="<%= section=='Sobre' %>" aria-controls="tab-1">Sobre</button>
     </li>
     <li>
-      <button role="tab" aria-selected="false" aria-controls="tab-2">Audiovisual</button>
+      <button role="tab" aria-selected="<%= section=='Audiovisual' %>" aria-controls="tab-2">Audiovisual</button>
     </li>
     <li>
-      <button role="tab" aria-selected="false" aria-controls="tab-3">Design</button>
+      <button role="tab" aria-selected="<%= section=='Design' %>" aria-controls="tab-3">Design</button>
     </li>
     <li>
-      <button role="tab" aria-selected="false" aria-controls="tab-4">Sistemas</button>
+      <button role="tab" aria-selected="<%= section=='Sistemas' %>" aria-controls="tab-4">Sistemas</button>
     </li>
     <li>
-      <button role="tab" aria-selected="false" aria-controls="tab-5">Jogos</button>
+      <button role="tab" aria-selected="<%= section=='Jogos' %>" aria-controls="tab-5">Jogos</button>
     </li>
   </ul>
 
   <div>
-    <div tabindex="0" role="tabpanel" id="tab-1" aria-labelledby="tab-1" tabindex="0">
+    <div tabindex="0" role="tabpanel" id="tab-1" aria-labelledby="tab-1" tabindex="0" <%- (section=='Sobre')? '':'hidden=""' %>>
       <img class="photo-bg" src="/images/Foto-SMD.png">
       <div>
         <img class="icones" src="/images/icons/cursos_icon.png">
@@ -41,7 +41,7 @@
       </p>
 
       <div class="lista_tcc">
-        <div class="subtitle">
+        <div class="title-tcc">
           <img class="tcc_icons" src="/images/icons/monografia.png">
           Monografia
           <img class="arrow_down" src="/images/icons/arrow-down.png">
@@ -56,7 +56,7 @@
       </div>
 
       <div class="lista_tcc">
-        <div class="subtitle">
+        <div class="title-tcc">
           <img class="tcc_icons" src="/images/icons/artigo.png">
           Artigo
           <img class="arrow_down" src="/images/icons/arrow-down.png">
@@ -73,7 +73,7 @@
       </div>
 
       <div id="lista_tcc_lastchild" class="lista_tcc">
-        <div class="subtitle">
+        <div class="title-tcc">
           <img class="tcc_icons" src="/images/icons/relatorio.png">
           Relatório Técnico
           <img class="arrow_down" src="/images/icons/arrow-down.png">
@@ -87,106 +87,66 @@
       </div>
     </div>
 
-    <div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" hidden="">
-      <div id="ordenar">
-    
+    <div tabindex="0" role="tabpanel" id="tab-2" aria-labelledby="tab-2" tabindex="0" <%- (section=='Audiovisual')? '':'hidden=""' %>>
+      <div id="ordenar" onclick="location.href='/index_smd/Audiovisual/<%=(filter_type == "alfa")? 'disp' : 'alfa'%>';">
         <div class="filtro">
           <div id="icone-ordenar">
-            <img src="images/icons/ordenar.png">
+              <img src="/images/icons/ordenar.png">
           </div>
           <button id="filtrar_por">
-            Filtrar por:
-          </button>
-        </div>
-    
-        <div class="filtrado">
-          <button type="button" class="btn bg-green br-15">
-            Ordem Alfabetica
-          </button>
-          <button type="button" class="btn bg-green br-15">
-            Ordem de Disponibilidade
+              <%= (filter_type == "alfa")? 'Ordem Alfabética' : 'Disponibilidade'%>
           </button>
         </div>
       </div>
-      <% docentes.filter(docente => docente.trilhas.includes('Audiovisual')).forEach(function(docente){ %>
+      <% docentes.filter(docente => docente.trilhas.split().includes('Audiovisual')).sort(filter).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>
     </div>
     
-    <div tabindex="0" role="tabpanel" id="tab-3" aria-labelledby="tab-3" tabindex="0" hidden="">
-      <div id="ordenar">
-    
-        <div class="filtro">
-          <div id="icone-ordenar">
-            <img src="images/icons/ordenar.png">
+    <div tabindex="0" role="tabpanel" id="tab-3" aria-labelledby="tab-3" tabindex="0" <%- (section=='Design')? '':'hidden=""' %>>
+        <div id="ordenar" onclick="location.href='/index_smd/Design/<%=(filter_type == "alfa")? 'disp' : 'alfa'%>';">
+          <div class="filtro">
+            <div id="icone-ordenar">
+                <img src="/images/icons/ordenar.png">
+            </div>
+            <button id="filtrar_por">
+                <%= (filter_type == "alfa")? 'Ordem Alfabética' : 'Disponibilidade'%>
+            </button>
           </div>
-          <button id="filtrar_por">
-            Filtrar por:
-          </button>
         </div>
-    
-        <div class="filtrado">
-          <button type="button" class="btn bg-green br-15">
-            Ordem Alfabetica
-          </button>
-          <button type="button" class="btn bg-green br-15">
-            Ordem de Disponibilidade
-          </button>
-        </div>
-      </div>
-      <% docentes.filter(docente => docente.trilhas.includes('Design')).forEach(function(docente){ %>
+      <% docentes.filter(docente => docente.trilhas.split(',').includes('Design')).sort(filter).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>
     </div>
     
-    <div tabindex="0" role="tabpanel" id="tab-4" aria-labelledby="tab-4" tabindex="0" hidden="">
-      <div id="ordenar">
-    
-        <div class="filtro">
-          <div id="icone-ordenar">
-            <img src="images/icons/ordenar.png">
+    <div tabindex="0" role="tabpanel" id="tab-4" aria-labelledby="tab-4" tabindex="0" <%- (section=='Sistemas')? '':'hidden=""' %>>
+        <div id="ordenar" onclick="location.href='/index_smd/Sistemas/<%=(filter_type == "alfa")? 'disp' : 'alfa'%>';">
+          <div class="filtro">
+            <div id="icone-ordenar">
+                <img src="/images/icons/ordenar.png">
+            </div>
+            <button id="filtrar_por">
+                <%= (filter_type == "alfa")? 'Ordem Alfabética' : 'Disponibilidade'%>
+            </button>
           </div>
-          <button id="filtrar_por">
-            Filtrar por:
-          </button>
         </div>
-    
-        <div class="filtrado">
-          <button type="button" class="btn bg-green br-15">
-            Ordem Alfabetica
-          </button>
-          <button type="button" class="btn bg-green br-15">
-            Ordem de Disponibilidade
-          </button>
-        </div>
-      </div>
-      <% docentes.filter(docente => docente.trilhas.includes('Sistemas')).forEach(function(docente){ %>
+      <% docentes.filter(docente => docente.trilhas.split(',').includes('Sistemas')).sort(filter).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>
     </div>
     
-    <div tabindex="0" role="tabpanel" id="tab-5" aria-labelledby="tab-5" tabindex="0" hidden="">
-      <div id="ordenar">
-    
-        <div class="filtro">
-          <div id="icone-ordenar">
-            <img src="images/icons/ordenar.png">
+    <div tabindex="0" role="tabpanel" id="tab-5" aria-labelledby="tab-5" tabindex="0"<%- (section=='Jogos')? '':'hidden=""' %>>
+        <div id="ordenar" onclick="location.href='/index_smd/Jogos/<%=(filter_type == "alfa")? 'disp' : 'alfa'%>';">
+          <div class="filtro">
+            <div id="icone-ordenar">
+                <img src="/images/icons/ordenar.png">
+            </div>
+            <button id="filtrar_por">
+                <%= (filter_type == "alfa")? 'Ordem Alfabética' : 'Disponibilidade'%>
+            </button>
           </div>
-          <button id="filtrar_por">
-            Filtrar por:
-          </button>
         </div>
-    
-        <div class="filtrado">
-          <button type="button" class="btn bg-green br-15">
-            Ordem Alfabetica
-          </button>
-          <button type="button" class="btn bg-green br-15">
-            Ordem de Disponibilidade
-          </button>
-        </div>
-      </div>
-      <% docentes.filter(docente => docente.trilhas.includes('Jogos')).forEach(function(docente){ %>
+      <% docentes.filter(docente => docente.trilhas.split(',').includes('Jogos')).sort(filter).forEach(function(docente){ %>
         <% include ./partials/card_docente %>
       <% }); %>
     </div>

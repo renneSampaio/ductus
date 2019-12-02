@@ -1,78 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Ductu</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Ductus</title>
 
-    <!-- Go to  http://realfavicongenerator.net/ to get your own favicon readable on all platforms -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=0.8, shrink-to-fit=no user-scalable=no" > -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=0.86, minimum-scale=0.86 user-scalable=no">
 
-    <meta name="author" content="Loïc Sciampagna">
-    <meta name="description" content="CSS framework for people who are not afraid of coding.">
+  <!-- Go to  http://realfavicongenerator.net/ to get your own favicon readable on all platforms -->
 
-    <meta property="og:url" content="https://buddycss.com" />
-    <meta property="og:type" content="Website" />
-    <meta property="og:title" content="BuddyCSS" />
-    <meta property="og:description" content="BuddyCSS is a CSS framework for people who love coding." />
-    <meta property="og:image" content="https://buddycss.com/images/sharer-1.jpg" />
+  <meta name="author" content="Loïc Sciampagna">
+  <meta name="description" content="CSS framework for people who are not afraid of coding.">
 
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,600,700,800,900,300italic,600italic' rel='stylesheet'
-        type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/css/buddy.plugins.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/buddy.css">
+  <meta property="og:url"                content="https://buddycss.com" />
+  <meta property="og:type"               content="Website" />
+  <meta property="og:title"              content="BuddyCSS" />
+  <meta property="og:description"        content="BuddyCSS is a CSS framework for people who love coding." />
+  <meta property="og:image"              content="https://buddycss.com/images/sharer-1.jpg" />
 
-    <link href="https://fonts.googleapis.com/css?family=Barlow:400,600,700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="/js/buddy.min.js"></script>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,300,600,700,800,900,300italic,600italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/buddy.plugins.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/buddy.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Barlow:400,600,700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="/js/buddy.min.js"></script>
 
-    <!-- ICONES FONTAWESOME -->
-    <script src="https://kit.fontawesome.com/fe18477891.js" crossorigin="anonymous"></script>
+  <!-- ICONES FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/fe18477891.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.theme.min.css">
+  <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.min.css">
 
-    <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="/JQuery/stylesheet/jquery-ui.min.css">
+  <script src="/JQuery/jquery-3.2.1.min.js"></script>  
+  <script src="/JQuery/jquery-ui.min.js"></script>
 
-    <script src="/JQuery/jquery-3.2.1.min.js"></script>
-    <script src="/JQuery/jquery-ui.min.js"></script>
+  <script>    
+    $(document).ready(function(){
+      $('.content').hide();
 
-    <script>    
-        $(document).ready(function(){
-          $('.content').hide();
-    
-          $('.subtitle').click(function(){
-            if($(this).next().is(':visible')){
-              $(this).next('.content').fadeOut(150);
-            } else{
-              $('.content').fadeOut(150);
-              $(this).next('.content').fadeIn(150);
-            } 
-          });
-    
-          $('.filtrado').hide();
-    
-          $('.filtro').click(function(){
-            $('.filtrado').fadeToggle(150);
-          });
-    
-          $('#caixa-pesquisa').hide();
-    
-          $('#icone-pesquisa').click(function(){
-            $('#caixa-pesquisa').fadeToggle(200);
-          });
-    
-          $('#btn_fechar').click(function(){
-            $('#caixa-pesquisa').fadeToggle(200);
-          });
-          $('#btn_voltar_pesquisa').click(function(){
-            $('#caixa-pesquisa').fadeToggle(200);
-          });
-        });
-      </script>
+      $('.title-tcc').click(function(){
+        if($(this).next().is(':visible')){
+          $(this).next('.content').fadeOut(150);
+        } else{
+          $(this).next('.content').fadeIn(150);
+        } 
+      });
+
+      // $('#popupcadastro').hide();
+      // window.setTimeout(function(){$('.popup').fadeToggle(200);}, 2000);
+      $('#popupcadastro').click(function(){
+        $('.popup').fadeToggle(200);
+      });
+      $('#popupsolicita').click(function(){
+        $('.popup').fadeToggle(200);
+        // window.setTimeout(function(){$('.popup').fadeToggle(500);}, 2000);
+      });
+
+      $('.filtrado').hide();
+
+      $('.filtro').click(function(){
+        $('.filtrado').fadeToggle(150);
+      });
+
+      $('.subtitle').click(function(){
+        if($(this).next().is(':visible')){
+          $(this).next('.content').fadeOut(150);
+        } else{
+          $('.content').fadeOut(150);
+          $(this).next('.content').fadeIn(150);
+        } 
+      });
+
+      $('#caixa-pesquisa').hide();
+
+      $('#icone-pesquisa').click(function(){
+        $('#caixa-pesquisa').fadeToggle(200);
+      });
+      $('#btn_voltar_pesquisa').click(function(){
+        $('#caixa-pesquisa').fadeToggle(200);
+      });
+
+      // We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  let vw = window.innerWidth * 0.01;
+  document.documentElement.style.setProperty('--vw', `${vw}px`);4
+});
+    });
+  </script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="padding-top: 0vh;">
         <% include ./partials/menu %>
         <%- body %>
     </div>

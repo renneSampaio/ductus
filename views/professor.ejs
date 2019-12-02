@@ -1,5 +1,51 @@
-<div class="cards" id="card-professor">
-  <%- include ./partials/card_docente %>
+<div class="cards_no_shadow" style="margin-top: 13vh;">
+    <img src="<%= docente.image %>" class="image-responsive" onclick="location.href='/<%= docente.id_lattes %>';">
+    <div class="card-content">
+      <div style="z-index: 1;" >
+        <img style="z-index: 1; position: relative;" class="favorito" onclick="document.getElementById('form_favoritar_<%= docente.id_lattes %>').submit(); console.log(src); let new_src = (src.includes('/images/icons/favoritar.png'))? '/images/icons/favoritado.png' : '/images/icons/favoritar.png'; $(this).attr('src', new_src )" src="/images/icons/<%= (docente.favoritado)? 'favoritado': 'favoritar' %>.png">
+        <form id="form_favoritar_<%= docente.id_lattes %>" action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
+        </form>
+      </div>
+  
+      <h3 onclick="location.href='/<%= docente.id_lattes %>';"> <%= docente.nome %></h3>
+      <%if (docente.disponivel) {%>
+        <%if (docente.disponivel_tcc) {%>
+          <span class="dot" id="dot_disponivel"></span>
+          <span id="disponivel_projetos">
+              Disponível
+          </span>
+        <% } else {%>
+          <span class="dot" id="dot_disponivel_projetos"></span>
+          <span id="disponivel_projetos">
+              Disponível apenas para projetos.
+          </span>
+          <%}%>
+      <% } else {%>
+        <span class="dot" id="dot_indisponivel"></span>
+        <span id="disponivel_projetos">
+            Indisponível.
+        </span>
+        <%}%>
+        <br>
+        <div>
+  
+          <% tag = docente.tags.split(',')[0].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+          <span class="tag"><%- tag %></span>
+          <% tag = docente.tags.split(',')[1].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+          <span class="tag"><%- tag %></span><br>
+        </div>
+        <div>
+  
+          <% tag = docente.tags.split(',')[2].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+          <span class="tag"><%- tag %></span>
+          <% tag = docente.tags.split(',')[3].replace(" ", '<span style="visibility: hidden;">_</span>');%>
+          <span class="tag"><%- tag %></span>
+        </div>
+  
+      <p onclick="location.href='/<%= docente.id_lattes %>';">
+        <%= docente.apresentacao %>
+      </p>
+      </div>
 </div>
 
   <div class="lista_tcc">
@@ -9,10 +55,7 @@
     </div>
     <div class="content">
       <p>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua.
+        <%= apresentacao %>
       </p>
     </div>
   </div>
@@ -24,10 +67,17 @@
     </div>
     <div class="content">
       <p>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua.
+          <% formacao.graduacao.forEach( grad => { %>
+            <p>
+              <%= grad %>
+            </p>
+          <% }) %>
+      </p>
+      <p>
+          <%= formacao.mestrado %>
+      </p>
+      <p>
+          <%= formacao.doutorado %>
       </p>
     </div>
   </div>
@@ -39,10 +89,7 @@
     </div>
     <div class="content">
       <p>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua.
+        <%= profissional %>
       </p>
     </div>
   </div>          
@@ -54,10 +101,11 @@
     </div>
     <div class="content">
       <p>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua.
+          <% publicacoes.forEach(pub => { %>
+            <p>
+              <%= pub %>
+            </p>
+          <% })  %>
       </p>
     </div>
   </div>
@@ -69,10 +117,7 @@
     </div>
     <div class="content">
       <p>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua.
+          <%= extensao %>
       </p> 
     </div>
   </div>

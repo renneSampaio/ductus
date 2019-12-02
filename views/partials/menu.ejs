@@ -5,13 +5,13 @@
 <% } %>
 
 <div class="page-header-mobile">
-  <div  id="page_header">
+  <div  id="page_header" style="">
     <button id="icone-menu" class="trigger-nav-container" data-trigger-nav="navOne">
       <img src="/images/icons/burger-icon.png">
     </button>
 
-    <div class="logo">
-      <img onclick="location.href='index.html'" src="/images/logo-ductus.png"  alt=" " />
+    <div class="logo" style="margin: 0;">
+      <img onclick="location.href='/'" src="/images/logo-ductus.png"  alt=" " />
     </div>
 
     <button id="icone-pesquisa" > 
@@ -27,42 +27,17 @@
         <img src="/images/icons/arrow-thin-left-white.png">
       </div>
       
-      <form>
-        <input type="search" name="pesquisa">
-      </form>
-      <div id="btn_fechar">
+      <form action="/busca" method="POST">
+        <input type="search" name="search" style="min-height: 40px;">
+      <button type="reset" name="fechar" value="close" id="btn_fechar">
         <img src="/images/icons/fechar.png">
-      </div>
+      </button>
+      </form>
     </div>
   </div>
   <% if (typeof pag != 'undefined')  { %>
     <div class="box-nav">
-      <a href="javascript:void(0)" onClick="history.go(-1); return false;">
-        <img src="/images/arrow-thin-left.png" class="icon-nav">
-      </a>
         <h3><%= pag %></h3> 
       </div>
     <% } %>
 </div>
-
-<!-- 
-<div class="page-header-mobile">
-  <img class="logo" src="/images/logo-ductu.png"  alt=" " />
-
-  <button class="trigger-nav-container" data-trigger-nav="navOne">
-        <img src="/images/icons/burger-icon.png"id="icone-menu">
-  </button>
-
-  <button id="icone-pesquisa" > <img src="/images/icons/pesquisa.png" style="" alt=""></button>
-  
-  <button id="icone-notificacao" onclick="location.href='/aluno/notificacoes';"> <img src="/images/icons/notificacao.png"></button>
-  <% if (typeof pag != 'undefined')  { %>
-  <div class="box-nav">
-    <a href="javascript:void(0)" onClick="history.go(-1); return false;">
-      <img src="/images/arrow-thin-left.png" class="icon-nav">
-    </a>
-      <h3><%= pag %></h3> 
-    </div>
-  <% } %>
-</div>
- -->

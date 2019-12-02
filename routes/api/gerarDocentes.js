@@ -14,9 +14,10 @@ router.get('/atualizarDados', (req, res) => {
     // console.log(docentes);
 
     cursos.forEach( name => {
-        const curso = new Curso({name})
-        curso.save().then(curso => {});
+        Curso.findOneAndUpdate({ name: name },{
+        }, { upsert: true }, doc => {});
     });
+
 
     docentes.reverse().pop();
     docentes.forEach(docente_string => {
@@ -26,11 +27,12 @@ router.get('/atualizarDados', (req, res) => {
         const img = docente_info[2];
         const email = docente_info[3];
         const trilhas = docente_info[4];
-        const tags = [docente_info[5], docente_info[6], docente_info[7], docente_info[8]];
+        const tags = [docente_info[5], docente_info[6], docente_info[7], docente_info[8]].join();
+        const descricao = docente_info[9].replace(/['"]+/g, '');
 
         const json = lerCurriculo(id_lattes);
         gerarDocente(nome,id_lattes, json, img, email, trilhas, tags);
-        gerarCurriculo(id_lattes, json);
+        gerarCurriculo(id_lattes, json, descricao);
     })
 
     res.send('');
@@ -56,7 +58,7 @@ function gerarDocente(nome, id_lattes, json, image, email, trilhas_string, tags)
     let nome_completo = json['DADOS-GERAIS']['@_NOME-COMPLETO'];
     let curso = 'Sistemas e Mídias Digitais'
 
-    const trilhas = trilhas_string.split(" | ");
+    const trilhas = trilhas_string.split(" | ").join();
     Docente.findOneAndUpdate({ id_lattes: id_lattes },{
         id_lattes,
         nome,
@@ -71,7 +73,7 @@ function gerarDocente(nome, id_lattes, json, image, email, trilhas_string, tags)
     }, { upsert: true }, doc => {});
 }
 
-function gerarCurriculo(id_lattes, json) {
+function gerarCurriculo(id_lattes, json, descricao) {
     let apresentacao = json['DADOS-GERAIS']['RESUMO-CV']['@_TEXTO-RESUMO-CV-RH'];
 
     let formacao = {};
@@ -85,28 +87,28 @@ function gerarCurriculo(id_lattes, json) {
 
     if (grad.forEach != undefined) {
         grad.forEach(g => {
-            formacao['graduacao'].push(`Graduado em ${g['@_NOME-CURSO']} pela ${g['@_NOME-INSTITUICAO']} em ${g['@_ANO-DE-CONCLUSAO']}`);
+            formacao['graduacao'].push(`Graduação em ${g['@_NOME-CURSO']} pela ${g['@_NOME-INSTITUICAO']} em ${g['@_ANO-DE-CONCLUSAO']}`);
         })
     } else {
-        formacao['graduacao'].push(`Graduado em ${grad['@_NOME-CURSO']} pela ${grad['@_NOME-INSTITUICAO']} em ${grad['@_ANO-DE-CONCLUSAO']}`);
+        formacao['graduacao'].push(`Graduação em ${grad['@_NOME-CURSO']} pela ${grad['@_NOME-INSTITUICAO']} em ${grad['@_ANO-DE-CONCLUSAO']}`);
     }
 
     if (mestr.forEach != undefined) {
         mestr.forEach(g => {
-            formacao['mestrado'].push(`Graduado em ${g['@_NOME-CURSO']} pela ${g['@_NOME-INSTITUICAO']} em ${g['@_ANO-DE-CONCLUSAO']}`);
+            formacao['mestrado'].push(`Graduação em ${g['@_NOME-CURSO']} pela ${g['@_NOME-INSTITUICAO']} em ${g['@_ANO-DE-CONCLUSAO']}`);
         })
     } else {
-        formacao['mestrado'].push(`Mestre em ${mestr['@_NOME-CURSO']} pela ${mestr['@_NOME-INSTITUICAO']} em ${mestr['@_ANO-DE-CONCLUSAO']}, com a tese "${mestr['@_TITULO-DA-DISSERTACAO-TESE']}".`);
+        formacao['mestrado'].push(`Mestrado em ${mestr['@_NOME-CURSO']} pela ${mestr['@_NOME-INSTITUICAO']} em ${mestr['@_ANO-DE-CONCLUSAO']}, com a tese "${mestr['@_TITULO-DA-DISSERTACAO-TESE']}".`);
     }
 
     if (doutr != undefined) {
 
         if (doutr.forEach != undefined) {
             doutr.forEach(g => {
-                formacao['doutorado'].push(`Graduado em ${g['@_NOME-CURSO']} pela ${g['@_NOME-INSTITUICAO']} em ${g['@_ANO-DE-CONCLUSAO']}`);
+                formacao['doutorado'].push(`Doutorado em ${g['@_NOME-CURSO']} pela ${g['@_NOME-INSTITUICAO']} em ${g['@_ANO-DE-CONCLUSAO']}`);
             })
         } else {
-            formacao['doutorado'].push(`Doutor em ${doutr['@_NOME-CURSO']} pela ${doutr['@_NOME-INSTITUICAO']} em ${doutr['@_ANO-DE-CONCLUSAO']} com a tese "${doutr['@_TITULO-DA-DISSERTACAO-TESE']}".`);
+            formacao['doutorado'].push(`Doutorado em ${doutr['@_NOME-CURSO']} pela ${doutr['@_NOME-INSTITUICAO']} em ${doutr['@_ANO-DE-CONCLUSAO']} com a tese "${doutr['@_TITULO-DA-DISSERTACAO-TESE']}".`);
         }
     }
 
@@ -141,6 +143,7 @@ function gerarCurriculo(id_lattes, json) {
 
     Curriculo.findOneAndUpdate({ id_lattes: id_lattes },{
         id_lattes,
+        descricao,
         apresentacao,
         formacao,
         profissional,

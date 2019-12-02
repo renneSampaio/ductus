@@ -19,11 +19,11 @@ const DocenteSchema = new mongoose.Schema({
         required: true,
     },
     trilhas: {
-        type: [],
+        type: String,
         default: '',
     },
     tags: {
-        type: [],
+        type: String,
         default: '',
     },
     email: {

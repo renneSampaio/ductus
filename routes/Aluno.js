@@ -34,7 +34,9 @@ router.get('/perfil/:pag', ensureAuthenticated, async (req, res) => {
 
         docentes.push(docente);
     }
-    
+    console.log('Favoritos:')
+    console.log(favoritos)
+
     res.render('perfil', {
         user: req.user,
         solicitacoes: solicitacoes_data,
@@ -49,7 +51,7 @@ router.get('/login', (req, res) => {
     if (req.isAuthenticated()) {
             res.redirect('/');
     } else {
-        res.render('login', {user: req.user, login: true})
+        res.render('login', {user: req.user, login: true, pag: "Entrar", cadastro_sucesso: false})
     }
 });
 
@@ -57,7 +59,7 @@ router.get('/login', (req, res) => {
 router.get('/register', (req, res) => { 
     Curso.find({}).then( cursos => {
         if (cursos) {
-            res.render('login', { user: req.user, cursos: cursos, login:false });
+            res.render('login', { user: req.user, cursos: cursos, login:false, cadastro_sucesso: false, pag: "Entrar"});
         }
     });
 });
@@ -68,32 +70,28 @@ router.post('/register', (req, res) => {
     let errors = [];
 
     if (!name || !email || !curso || !password || !password2) {
-        errors.push({msg: 'Please fill all fields'});
+        errors.push({msg: 'Preencha todos os campos'});
     }
 
     if (password != password2) {
-        errors.push({msg: 'Passwords do not match'});
+        errors.push({msg: 'As senhas não estão iguais'});
     }
 
     if (errors.length > 0) {
-        res.render('register', {
-            errors,
-            name,
-            email,
-            curso,
-            user: req.user
-        });
+        res.render('login', { errors, email, name, curso, user: req.user, login:false, pag: "Entrar", cadastro_sucesso: false});
+        // res.render('register', {
+        //     errors,
+        //     name,
+        //     email,
+        //     curso,
+        //     user: req.user
+        // });
     } else {
         Aluno.findOne({email: email})
             .then(aluno => {
                 if (aluno) {
-                    errors.push({msg: 'Email already registered'});
-                    res.render('register', {
-                        errors,
-                        name,
-                        curso,
-                        user: req.user
-                    });
+                    errors.push({msg: 'Email já cadastrado'});
+                    res.render('login', { errors, name, user: req.user, login:false, pag: "Entrar", cadastro_sucesso: false});
                 } else {
                     const newaluno = new Aluno({
                         name,
@@ -110,7 +108,7 @@ router.post('/register', (req, res) => {
                             newaluno.save()
                                 .then(aluno => {
                                     req.flash('success_msg', 'You are now registered and can log in');
-                                    res.redirect('/aluno/login');
+                                    res.render('login', { errors, email, name, user: req.user, login:true, pag: "Entrar", cadastro_sucesso: true});
                                 })
                                 .catch(err => console.log(err));
                     }));
@@ -123,7 +121,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res, next) => {
     passport.authenticate('aluno', {
         successRedirect: '/',
-        failureRedirect: '/users/login',
+        failureRedirect: '/aluno/login',
         failureFlash: true
     })(req, res, next);
 });
@@ -170,7 +168,7 @@ router.get('/solicitacoes', (req, res) => {
     })
 });
 
-router.post('/favoritar/:id_lattes', ensureAuthenticated, (req, res) => {
+router.post('/favoritar/:id_lattes/:pag?', ensureAuthenticated, (req, res) => {
     if (req.user == undefined) res.sendStatus(204);
     const id_lattes = req.params.id_lattes;
 
@@ -189,8 +187,11 @@ router.post('/favoritar/:id_lattes', ensureAuthenticated, (req, res) => {
 
     console.log("Favoritado")
     console.log(id_lattes);
-
-    res.sendStatus(204);
+    
+    if (req.params.pag == "Perfil")
+        res.redirect("/aluno/perfil/favoritos");
+    else
+        res.sendStatus(204);
 });
 
 router.get('/notificacoes', ensureAuthenticated, async (req, res) => {

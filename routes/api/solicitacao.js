@@ -10,27 +10,6 @@ const Notificacao = require('../../models/Notificacao')
 
 router.notificacoes = async (req, res, next) => {
     if (req.isAuthenticated()) {
-        // res.locals.solicitacoes = []
-        // const solicitacoes = await Solicitacao.find({ aluno: req.user._id, respondido: true });
-
-        // if (!solicitacoes) {
-        //     return;
-        // }
-
-        // for (let i = 0; i < solicitacoes.length; i++) {
-        //     const solicitacao = solicitacoes[i];
-        //     const docente = await Docente.findOne({ id_lattes: solicitacao.id_lattes });
-
-        //     if (docente) {
-        //         res.locals.solicitacoes.push(
-        //             {
-        //                 solicitacao: solicitacao,
-        //                 docente: docente,
-        //             }
-        //         );
-        //     }
-        // }
-
         const notif_query = Notificacao.find({});
         const notificacoes = await notif_query.exec();
         res.locals.notificacoes = notificacoes
@@ -54,11 +33,14 @@ router.get('/solicitacao/:id_lattes', ensureAuthenticated, async (req, res) => {
     res.render('enviar_mensagem', {user: req.user, docente: docente})
 });
 
-router.post('/solicitacao/:id_lattes', (req, res) => {
+router.post('/solicitacao/:id_lattes', ensureAuthenticated, async (req, res) => {
 
     const aluno = req.user._id;
     const id_lattes = req.params.id_lattes;
     const {tipo, mensagem} = req.body;
+
+    const docente_query = Docente.findOne({ id_lattes: req.params.id_lattes });
+    const docente = await docente_query.exec();
 
     const solic = new Solicitacao({
         id_lattes,
@@ -86,7 +68,7 @@ router.post('/solicitacao/:id_lattes', (req, res) => {
         })
 
         console.log(`Solicitado ${req.params.id_lattes}`);
-        res.sendStatus(204);
+        res.render('enviar_mensagem', {user: req.user, docente: docente, solicit_sucesso: true})
 
     });
 });

@@ -14,7 +14,43 @@ router.get('/', (req, res) => {
 
 router.get('/cursos', (req, res) => res.render('cursos', { user: req.user, pag: "Cursos" }));
 
-router.get('/index_smd', (req, res) => {
+
+function alfa_filter(left, right) {
+    if (left.nome < right.nome) {
+        return -1;
+    } else if (right.nome > left.nome) {
+        return 1;
+    }
+
+    return 0;
+}
+
+function disp_filter(left, right) {
+    if ((right.disponivel_tcc && right.disponivel) && (!left.disponivel)) {
+        return 1;
+    }
+    if ((left.disponivel_tcc && left.disponivel) && (!right.disponivel)) {
+        return -1;
+    }
+
+    if ((right.disponivel_tcc && right.disponivel) && (!left.disponivel_tcc && left.disponivel)) {
+        return 1;
+    }
+    if ((!right.disponivel_tcc && right.disponivel) && (left.disponivel_tcc && left.disponivel)) {
+        return -1;
+    }
+
+    if (!left.disponivel && right.disponivel) {
+        return 1;
+    }
+    if (!right.disponivel && left.disponivel) {
+            return -1;
+    }
+    
+    return 0;
+}
+
+router.get('/index_smd/:section?/:filter_type?', (req, res) => {
 
     Docente.find({})
         .then(async (docentes) => {
@@ -28,13 +64,16 @@ router.get('/index_smd', (req, res) => {
                 const curriculo_query = Curriculo.findOne({ id_lattes: docentes[i].id_lattes });
                 const curriculo = await curriculo_query.exec();
 
-                docentes[i].apresentacao = curriculo.apresentacao;
+                docentes[i].apresentacao = curriculo.descricao;
             }
 
             res.render('index_smd', {
-                docentes: docentes,
+                docentes: docentes.sort(alfa_filter),
                 user: req.user,
-                pag: "Sistemas e Mídias Digitais"
+                pag: "Sistemas e Mídias Digitais",
+                section: (typeof req.params.section == 'undefined')? 'Sobre': req.params.section,
+                filter_type: req.params.filter_type,
+                filter: (req.params.filter_type=="alfa")? alfa_filter : disp_filter,
             });
         });
 
@@ -65,7 +104,9 @@ router.get('/:id', (req, res) => {
                             docente: docente,
                             apresentacao: curriculo.apresentacao,
                             formacao: curriculo.formacao,
+                            profissional: curriculo.profissional,
                             publicacoes: curriculo.publicacoes,
+                            extensao: curriculo.extensao,
                             user: req.user,
                             pag: "Docente"
                         });
@@ -77,25 +118,18 @@ router.get('/:id', (req, res) => {
         })
 
 });
+ 
+router.post('/busca', async (req, res) => {
+    const { search } = req.body;
 
-// router.get('/:id', (req, res) => {
-//     const path = `./curriculos/${req.params.id}/curriculo.xml`;
-//     const xml = fs.readFileSync(path,'binary');
+    let reg = new RegExp(`${search}`, 'i')
+    let query = Docente.find().or([ {tags: reg}, {nome_completo: reg}, {trilhas: reg}])
+    const result = await query.exec();
 
-//     var options = {
-//         ignoreAttributes: false,
-//         localeRange: "ptBR",
-//     }
+    console.log(result);
 
-//     if (fast_xml_parser.validate(xml) === true) {
-//         var json = fast_xml_parser.parse(xml, options);
-//     }
-
-//     res.render('professor', {
-//         nome: json['CURRICULO-VITAE']['DADOS-GERAIS']['@_NOME-COMPLETO'],
-//         apresentacao: json['CURRICULO-VITAE']['DADOS-GERAIS']['RESUMO-CV']['@_TEXTO-RESUMO-CV-RH'],
-//     });
-// });
+    res.render('busca', {user: req.user, docentes: result, pag: `Busca: "${search}"`})
+});
 
 router.get('/:id/json', (req, res) => {
     const path = 'curriculo/' + req.params.id + '/curriculo.xml';

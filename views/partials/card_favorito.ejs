@@ -1,19 +1,17 @@
 <div class="slide">
     <div class="professores_favoritados">
         <div>
-            <h5>
+            <h5 onclick="location.href='/<%= docente.id_lattes %>';">
                 <%= docente.nome %>
             </h5>
-            <div class="container-image">
+            <div class="container-image" onclick="location.href='/<%= docente.id_lattes %>';">
                 <img src="<%= docente.image %>">
             </div>
             <div>
-                <form action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
-                    <button id="btn_mensagem">
+                    <button id="btn_mensagem" onclick="location.href='/api/solicitacao/<%= docente.id_lattes %>';">
                         <img src="/images/icons/mensagem.png" id="btn_mensagem">
                     </button>
-                </form>
-                <form action="/aluno/favoritar/<%= docente.id_lattes %>" method="POST">
+                <form action="/aluno/favoritar/<%= docente.id_lattes %>/Perfil" method="POST" >
                     <button id="btn_favoritar">
                         <img src="/images/icons/btn_favoritar.png" id="btn_favoritar">
                     </button>
