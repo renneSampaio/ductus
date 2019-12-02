@@ -1,4 +1,4 @@
-<div id="solicit-perfil" class="lista_tcc">
+<div id="solicit-perfil" class="lista_tcc" style="padding-top: 0; padding-bottom: 0;">
     <div class="subtitle">
         <img src="/images/icons/solicitacao.png" class="btn_solicita">
         <h5> <%= docente.nome %>: </h5>
@@ -11,7 +11,7 @@
         </p>
         <% if (solicitacao.respondido) { %>
         <h5> Resposta: </h5>
-        <p style="margin-left: 40px; margin-top: 0px;">
+        <p style="margin-left: 40px; margin-top: 0px; padding-bottom: 20px;">
             <%= solicitacao.resposta %>
         </p>
         <% } %>
